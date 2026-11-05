@@ -3,6 +3,7 @@ import { useState } from "react";
 import anjos from "@/assets/anjinhos.png.asset.json";
 import inferno from "@/assets/inferno.png.asset.json";
 import lace from "@/assets/intro/frame13.png.asset.json";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/escolha")({
   head: () => ({
@@ -36,29 +37,31 @@ function Escolha() {
       ))}
       <div className="relative z-10 flex flex-col items-center gap-10 px-6 text-center">
         <h1
-          className={`font-serif text-4xl italic md:text-6xl transition-colors ${
+          className={`script-heading transition-colors ${
             hover === "mal" ? "text-destructive" : "text-primary"
           }`}
         >
-          você já sabe quem fez né?
+          Você já sabe quem fez, né?
         </h1>
         <div className="flex gap-6">
-          <Link
+          <Button asChild className="continue-button"><Link
             to="/duo"
             onMouseEnter={() => setHover("duo")}
             onMouseLeave={() => setHover(null)}
-            className="rounded-full bg-primary px-10 py-3 font-serif text-xl text-primary-foreground shadow-lg transition hover:scale-110"
+            onFocus={() => setHover("duo")}
+            onBlur={() => setHover(null)}
           >
-            duo
-          </Link>
-          <Link
+            Duo
+          </Link></Button>
+          <Button asChild variant="destructive" className="continue-button"><Link
             to="/do-mal"
             onMouseEnter={() => setHover("mal")}
             onMouseLeave={() => setHover(null)}
-            className="rounded-full bg-destructive px-10 py-3 font-serif text-xl text-destructive-foreground shadow-lg transition hover:scale-110"
+            onFocus={() => setHover("mal")}
+            onBlur={() => setHover(null)}
           >
-            do mal
-          </Link>
+            Do mal
+          </Link></Button>
         </div>
       </div>
     </main>

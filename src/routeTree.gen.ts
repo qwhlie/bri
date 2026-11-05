@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as DoMalRouteImport } from './routes/do-mal'
 import { Route as DuoRouteImport } from './routes/duo'
 import { Route as EscolhaRouteImport } from './routes/escolha'
+import { Route as QuizQuestionRouteImport } from './routes/quiz.$question'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,18 +35,25 @@ const EscolhaRoute = EscolhaRouteImport.update({
   path: '/escolha',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuizQuestionRoute = QuizQuestionRouteImport.update({
+  id: '/quiz/$question',
+  path: '/quiz/$question',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/do-mal': typeof DoMalRoute
   '/duo': typeof DuoRoute
   '/escolha': typeof EscolhaRoute
+  '/quiz/$question': typeof QuizQuestionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/do-mal': typeof DoMalRoute
   '/duo': typeof DuoRoute
   '/escolha': typeof EscolhaRoute
+  '/quiz/$question': typeof QuizQuestionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,14 @@ export interface FileRoutesById {
   '/do-mal': typeof DoMalRoute
   '/duo': typeof DuoRoute
   '/escolha': typeof EscolhaRoute
+  '/quiz/$question': typeof QuizQuestionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/do-mal' | '/duo' | '/escolha'
+  fullPaths: '/' | '/do-mal' | '/duo' | '/escolha' | '/quiz/$question'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/do-mal' | '/duo' | '/escolha'
-  id: '__root__' | '/' | '/do-mal' | '/duo' | '/escolha'
+  to: '/' | '/do-mal' | '/duo' | '/escolha' | '/quiz/$question'
+  id: '__root__' | '/' | '/do-mal' | '/duo' | '/escolha' | '/quiz/$question'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +76,7 @@ export interface RootRouteChildren {
   DoMalRoute: typeof DoMalRoute
   DuoRoute: typeof DuoRoute
   EscolhaRoute: typeof EscolhaRoute
+  QuizQuestionRoute: typeof QuizQuestionRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +109,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EscolhaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/quiz/$question': {
+      id: '/quiz/$question'
+      path: '/quiz/$question'
+      fullPath: '/quiz/$question'
+      preLoaderRoute: typeof QuizQuestionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +124,7 @@ const rootRouteChildren: RootRouteChildren = {
   DoMalRoute: DoMalRoute,
   DuoRoute: DuoRoute,
   EscolhaRoute: EscolhaRoute,
+  QuizQuestionRoute: QuizQuestionRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
