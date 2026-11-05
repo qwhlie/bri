@@ -1,22 +1,22 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import f1 from "@/assets/intro/frame1.png.asset.json";
-import f2 from "@/assets/intro/frame2.png.asset.json";
-import f3 from "@/assets/intro/frame3.png.asset.json";
-import f4 from "@/assets/intro/frame4.png.asset.json";
-import f5 from "@/assets/intro/frame5.png.asset.json";
-import f6 from "@/assets/intro/frame6.png.asset.json";
 
-const frames = [f1, f2, f3, f4, f5, f6].map((f) => f.url);
+const mods = import.meta.glob("@/assets/intro/frame*.png.asset.json", { eager: true }) as Record<
+  string,
+  { default: { url: string } }
+>;
+const frames = Object.entries(mods)
+  .sort(([a], [b]) => Number(a.match(/frame(\d+)/)![1]) - Number(b.match(/frame(\d+)/)![1]))
+  .map(([, m]) => m.default.url);
 const FRAME_MS = 180;
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Abertura" },
-      { name: "description", content: "Abertura animada em stop motion." },
-      { property: "og:title", content: "Abertura" },
-      { property: "og:description", content: "Abertura animada em stop motion." },
+      { title: "Uma surpresinha pra você" },
+      { name: "description", content: "Alguém preparou uma surpresinha pra você." },
+      { property: "og:title", content: "Uma surpresinha pra você" },
+      { property: "og:description", content: "Alguém preparou uma surpresinha pra você." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -46,14 +46,24 @@ function Index() {
     return () => clearTimeout(t);
   }, [loaded, i]);
 
+  const done = i === frames.length - 1;
+
   return (
-    <main className="flex min-h-screen items-center justify-center bg-background">
-      <img
-        src={frames[i]}
-        alt="Abertura"
-        className="h-screen w-screen object-cover"
-        onClick={() => setI(0)}
-      />
+    <main className="relative flex h-screen items-center justify-center overflow-hidden bg-background">
+      <img src={frames[i]} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      {done && (
+        <div className="relative z-10 flex animate-in fade-in zoom-in-95 duration-700 flex-col items-center gap-6 px-6 text-center">
+          <p className="font-serif text-3xl italic text-primary md:text-5xl">
+            parece que alguém fez uma surpresinha pra você
+          </p>
+          <Link
+            to="/escolha"
+            className="rounded-full bg-primary px-8 py-3 font-serif text-lg text-primary-foreground shadow-lg transition hover:scale-105"
+          >
+            continuar
+          </Link>
+        </div>
+      )}
     </main>
   );
 }
