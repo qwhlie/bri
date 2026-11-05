@@ -273,7 +273,7 @@
 .open-letter-sheet header { font-size: 32px; line-height: 1.5; }
 .open-letter-bird { position: absolute; right: 28px; top: 22px; width: 100px; height: 100px; object-fit: contain; opacity: .7; }
 .open-letter-message { min-height: 280px; display: grid; place-items: center; text-align: center; font-size: 32px; line-height: 1.6; overflow-wrap: anywhere; }
-@media (max-width: 600px) { .open-letter-scene { padding: 28px 18px 260px; } .open-letter-sheet { min-height: 500px; padding: 42px 28px; } .open-letter-bird { width: 72px; height: 72px; right: 18px; } .open-letter-sheet header, .open-letter-message { font-size: 28px; } }
+@media (max-width: 600px) { .open-letter-scene { padding: 28px 18px 36px; } .open-letter-sheet { min-height: 500px; padding: 42px 28px; } .open-letter-bird { width: 72px; height: 72px; right: 18px; } .open-letter-sheet header, .open-letter-message { font-size: 28px; } .open-letter-scene + .soundtrack { position: relative; right: auto; bottom: auto; margin: 14px 14px 14px auto; width: 224px; } }
 .moon-finale { position: relative; min-height: 100svh; overflow: hidden; display: flex; justify-content: center; background: var(--night); }
 .finale-sky { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 35% center; }
 .hanging-plaque { position: relative; width: min(540px, 88%, 66svh); aspect-ratio: 752 / 896; align-self: flex-start; transform-origin: 50% 0; animation: plaque-sway 6s ease-in-out infinite; }
