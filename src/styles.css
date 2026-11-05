@@ -247,14 +247,14 @@
 .letter-wave-back { z-index: 1; opacity: .6; animation: wave-rock 8s ease-in-out infinite; }
 .letter-wave-front { z-index: 3; bottom: -180px; animation: wave-rock 6s ease-in-out infinite reverse; }
 .letter-cloud { position: absolute; z-index: 7; top: 8%; width: 90%; height: 85%; object-fit: fill; pointer-events: none; }
-.letter-cloud-left { left: -15%; animation: cloud-left 4.5s .3s ease-in-out both; }
-.letter-cloud-right { right: -15%; transform: scaleX(-1); animation: cloud-right 4.5s .3s ease-in-out both; }
-.letter-cloud-upper-left { left: -12%; top: -38%; animation: cloud-left 4.8s .4s ease-in-out both; }
-.letter-cloud-upper-right { right: -12%; top: -38%; animation: cloud-right 4.8s .4s ease-in-out both; }
-.letter-cloud-lower-left { left: -18%; top: 48%; animation: cloud-left 4.4s .2s ease-in-out both; }
-.letter-cloud-lower-right { right: -18%; top: 48%; animation: cloud-right 4.4s .2s ease-in-out both; }
-.letter-cloud-center-left { left: 0; top: 5%; animation: cloud-left 4.8s .5s ease-in-out both; }
-.letter-cloud-center-right { right: 0; top: 5%; animation: cloud-right 4.8s .5s ease-in-out both; }
+.letter-cloud-left { left: -15%; animation: cloud-left 6.8s .3s ease-in-out both; }
+.letter-cloud-right { right: -15%; transform: scaleX(-1); animation: cloud-right 6.8s .3s ease-in-out both; }
+.letter-cloud-upper-left { left: -12%; top: -38%; animation: cloud-left 7.2s .4s ease-in-out both; }
+.letter-cloud-upper-right { right: -12%; top: -38%; animation: cloud-right 7.2s .4s ease-in-out both; }
+.letter-cloud-lower-left { left: -18%; top: 48%; animation: cloud-left 6.6s .2s ease-in-out both; }
+.letter-cloud-lower-right { right: -18%; top: 48%; animation: cloud-right 6.6s .2s ease-in-out both; }
+.letter-cloud-center-left { left: 0; top: 5%; animation: cloud-left 7.2s .5s ease-in-out both; }
+.letter-cloud-center-right { right: 0; top: 5%; animation: cloud-right 7.2s .5s ease-in-out both; }
 .letter-bird { position: absolute; z-index: 6; width: 180px; height: 180px; object-fit: contain; top: 15%; left: -200px; animation: bird-delivery 5s 1s ease-in-out both; }
 .envelope-delivery { width: min(100%, 360px); height: 320px; display: flex; align-items: flex-end; opacity: 0; animation: envelope-drop 2s 3.3s cubic-bezier(.2,.7,.4,1) forwards; }
 .envelope { position: relative; width: 100%; height: 210px; perspective: 900px; filter: drop-shadow(var(--envelope-shadow)); }
