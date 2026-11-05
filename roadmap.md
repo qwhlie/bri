@@ -17,5 +17,5 @@
 - [x] Solicitar música automática, remover crédito visível de Xito e trocar trilha final.
 - [x] Acelerar Inclusive e inserir carta aberta após o envelope endereçado.
 - [x] Verificar navegação, músicas e carta no computador e celular.
-- [ ] Deixar player mais discreto sem ocultar o vídeo.
-- [ ] Trocar última pergunta por resposta digitada e verificar continuidade.
+- [x] Deixar player mais discreto sem ocultar o vídeo.
+- [x] Trocar última pergunta por resposta digitada e verificar continuidade.
