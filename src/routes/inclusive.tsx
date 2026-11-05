@@ -12,13 +12,22 @@ function Inclusive() {
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     let active = true;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setFrame(2);
+      setLoaded(true);
+      return;
+    }
     Promise.all(frames.map(src => new Promise<void>(resolve => { const img = new Image(); img.onload = img.onerror = () => resolve(); img.src = src; }))).then(() => { if (active) setLoaded(true); });
     return () => { active = false; };
   }, []);
   useEffect(() => {
     if (!loaded || frame === 2) return;
-    const timer = setTimeout(() => setFrame(f => f + 1), 1400);
+    const timer = setTimeout(() => setFrame(f => f + 1), 2600);
     return () => clearTimeout(timer);
   }, [loaded, frame]);
-  return <main className="surprise-scene lunar-scene"><img key={frame} className="scene-background scene-blurred moon-transition" src={frames[frame]} alt="A lua emoldurada por um arco de pedra" />{frame === 2 && <div className="scene-content"><h1 className="script-heading">Inclusive...</h1><Next to="/animacao" /></div>}</main>;
+  return <main className={`surprise-scene lunar-scene moon-journey ${loaded ? "moon-ready" : ""}`}>
+    {frames.map((src, index) => <img key={src} className={`scene-background scene-blurred moon-layer ${frame >= index ? "moon-layer-visible" : ""}`} src={src} alt={index === 0 ? "A lua emoldurada por um arco de pedra" : ""} />)}
+    <div className="lunar-shade" />
+    {frame === 2 && <div className="scene-content moon-arrival"><h1 className="script-heading">Inclusive...</h1><Next to="/animacao" /></div>}
+  </main>;
 }

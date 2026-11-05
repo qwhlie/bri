@@ -13,3 +13,4 @@
 - Keep quiz content and answer validation in a browser-safe data module with one-based URL question numbers and zero-based answer indices, so correctness is independently testable.
 - Use temporary client-only audio and clearly marked sample content until the owner supplies personal media; never invent personal memories or a letter.
 - Keep story decorations in the shared presentation and chapter animations in CSS with reduced-motion fallbacks, so animated chapters remain accessible without changing quiz logic.
+- Keep the temporary horror soundtrack in a client-only Web Audio hook with bounded gain, user volume controls and unmount cleanup, so it needs no remote media and never continues on other chapters.
