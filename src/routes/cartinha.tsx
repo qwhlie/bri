@@ -20,13 +20,19 @@ function Letter() {
     <div className="letter-wave letter-wave-front" aria-hidden="true"><img src={waves} alt="" /></div>
     <img className="letter-cloud letter-cloud-left" src={cloud} alt="" />
     <img className="letter-cloud letter-cloud-right" src={cloud} alt="" />
+     <img className="letter-cloud letter-cloud-upper-left" src={cloud} alt="" />
+     <img className="letter-cloud letter-cloud-upper-right" src={cloud} alt="" />
+     <img className="letter-cloud letter-cloud-lower-left" src={cloud} alt="" />
+     <img className="letter-cloud letter-cloud-lower-right" src={cloud} alt="" />
+     <img className="letter-cloud letter-cloud-center-left" src={cloud} alt="" />
+     <img className="letter-cloud letter-cloud-center-right" src={cloud} alt="" />
     <img className="letter-bird" src={bird} alt="" />
     <div className="letter-center">
       <h1 className="script-heading letter-title">Uma cartinha pra você</h1>
       <div className="envelope-delivery"><div className="envelope">
         <div className="envelope-back" /><div className="envelope-flap" />
         <div className="letter-paper" aria-hidden={!arrived}><p>Sua cartinha vem aqui ♡</p></div>
-        <div className="envelope-front" /><span className="envelope-seal" aria-hidden="true">♡</span>
+        <div className="envelope-front"><div className="envelope-embroidery" aria-hidden="true">✧ ❦ ✧</div></div><span className="envelope-seal" aria-hidden="true">♡</span>
       </div></div>
       <div className="letter-next">{arrived && <Next to="/obrigada" />}</div>
     </div>

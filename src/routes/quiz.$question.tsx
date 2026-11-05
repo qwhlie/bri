@@ -24,7 +24,7 @@ function Question({ number }: { number: number }) {
   const item = quiz[number - 1];
   if (!item) return null;
   const next = nextQuizStep(number);
-  return <Scene><section className="quiz-content">
+  return <Scene quizQuestion={number}><section className="quiz-content">
     <Ornament /><p className="question-number">{String(number).padStart(2, "0")} / {quiz.length}</p>
     <h1 className="quiz-heading">{item.question}</h1>
     <div className="quiz-options">{item.options.map((option, index) => {
