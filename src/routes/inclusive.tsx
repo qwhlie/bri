@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Next } from "@/components/surprise";
 import { surpriseHead } from "@/lib/surprise-head";
+import { MOON_FRAME_MS } from "@/lib/presentation";
 import first from "@/assets/moon/frame1.jpg.asset.json";
 import second from "@/assets/moon/frame2.jpg.asset.json";
 import third from "@/assets/moon/frame3.jpg.asset.json";
@@ -22,7 +23,7 @@ function Inclusive() {
   }, []);
   useEffect(() => {
     if (!loaded || frame === 2) return;
-    const timer = setTimeout(() => setFrame(f => f + 1), 2200);
+    const timer = setTimeout(() => setFrame(f => f + 1), MOON_FRAME_MS);
     return () => clearTimeout(timer);
   }, [loaded, frame]);
   return <main className={`surprise-scene lunar-scene moon-journey ${loaded ? "moon-ready" : ""}`}>

@@ -235,10 +235,10 @@
 .storybook-postmark svg { width: 22px; }
 .storybook-bottom-lace { position: absolute; bottom: 22px; left: 190px; right: 145px; height: 20px; background: var(--story-lace); opacity: .4; }
 .storybook-frame::before { content: ""; position: absolute; top: 90px; bottom: 110px; left: -8px; width: 4px; background: var(--story-stitch); opacity: .4; }
-.moon-layer { opacity: 0; transition: opacity 2000ms cubic-bezier(.25,.1,.25,1); }
+.moon-layer { opacity: 0; transition: opacity 1400ms cubic-bezier(.25,.1,.25,1); }
 .moon-layer-visible { opacity: 1; }
-.moon-ready .moon-layer { animation: moon-drift 9s linear both; }
-.moon-arrival { animation: moon-caption 1.5s 1.5s ease both; }
+.moon-ready .moon-layer { animation: moon-drift 7s linear both; }
+.moon-arrival { animation: moon-caption 1.2s .8s ease both; }
 .letter-scene { position: relative; min-height: 100svh; overflow: hidden; background: var(--storybook-blue); color: var(--primary); display: grid; place-items: center; padding: 80px 24px 160px; }
 .letter-center { position: relative; z-index: 4; width: min(100%, 560px); display: flex; flex-direction: column; align-items: center; gap: 28px; }
 .letter-title { color: var(--letter-paper); font-size: 58px; opacity: 0; animation: letter-appear 1.4s 7s ease forwards; }
@@ -266,6 +266,14 @@
 .envelope-embroidery { position: absolute; bottom: 14px; left: 16px; right: 16px; text-align: center; font-size: 30px; color: var(--storybook-blue); border-bottom: 3px double currentColor; }
 .envelope-seal { position: absolute; z-index: 5; top: 50%; left: calc(50% - 26px); width: 52px; height: 52px; border-radius: 42% 48% 44% 47%; background: var(--storybook-blue); color: var(--letter-paper); border: 5px double var(--envelope-blue); box-shadow: var(--scene-shadow); font-size: 30px; display: grid; place-items: center; animation: seal-disappear .6s 5.2s ease forwards; }
 .letter-next { min-height: 58px; }
+.open-letter-scene { position: relative; min-height: 100svh; overflow: hidden; padding: 48px 24px 260px; background: var(--storybook-blue); }
+.open-letter-content { position: relative; z-index: 1; width: min(100%, 640px); margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 32px; animation: scene-in 1.2s ease both; }
+.open-letter-sheet { position: relative; width: 100%; min-height: 570px; padding: 52px 48px; background: var(--letter-paper); color: var(--primary); box-shadow: var(--envelope-shadow); border: 1px solid var(--envelope-blue); }
+.open-letter-sheet::before { content: ""; position: absolute; inset: 14px; border: 1px solid var(--storybook-blue); opacity: .4; pointer-events: none; }
+.open-letter-sheet header { font-size: 32px; line-height: 1.5; }
+.open-letter-bird { position: absolute; right: 28px; top: 22px; width: 100px; height: 100px; object-fit: contain; opacity: .7; }
+.open-letter-message { min-height: 280px; display: grid; place-items: center; text-align: center; font-size: 32px; line-height: 1.6; overflow-wrap: anywhere; }
+@media (max-width: 600px) { .open-letter-scene { padding: 28px 18px 36px; } .open-letter-sheet { min-height: 500px; padding: 42px 28px; } .open-letter-bird { width: 72px; height: 72px; right: 18px; } .open-letter-sheet header, .open-letter-message { font-size: 28px; } .open-letter-scene + .soundtrack { position: relative; right: auto; bottom: auto; margin: 14px 14px 14px auto; width: 224px; } }
 .moon-finale { position: relative; min-height: 100svh; overflow: hidden; display: flex; justify-content: center; background: var(--night); }
 .finale-sky { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 35% center; }
 .hanging-plaque { position: relative; width: min(540px, 88%, 66svh); aspect-ratio: 752 / 896; align-self: flex-start; transform-origin: 50% 0; animation: plaque-sway 6s ease-in-out infinite; }

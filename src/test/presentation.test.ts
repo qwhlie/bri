@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { quizDecorationGroup, soundtrackForPath, youtubeEmbedUrl } from "@/lib/presentation";
+import { MOON_FRAME_MS, quizDecorationGroup, soundtrackForPath, youtubeEmbedUrl } from "@/lib/presentation";
 
 describe("chapter presentation rules", () => {
   it("changes decoration every two questions through question 16 only", () => {
@@ -10,10 +10,14 @@ describe("chapter presentation rules", () => {
   });
   it("uses the supplied Xito video for the music chapter", () => expect(soundtrackForPath("/musica")?.id).toBe("Qdv3DjIOl6w"));
   it("switches to the supplied Wicked Game video on the letter", () => expect(soundtrackForPath("/cartinha")?.id).toBe("20UpB7XwQv4"));
+  it("keeps Wicked Game on the letter outside its envelope", () => expect(soundtrackForPath("/carta")?.id).toBe("20UpB7XwQv4"));
+  it("uses the newly supplied video on the final page", () => expect(soundtrackForPath("/obrigada")?.id).toBe("ORXurYriT8Q"));
+  it("accelerates the moon frames from the previous 2200ms", () => expect(MOON_FRAME_MS).toBeLessThan(2200));
+  it("requests automatic playback", () => expect(new URL(youtubeEmbedUrl("ORXurYriT8Q")).searchParams.get("autoplay")).toBe("1"));
   it("uses Será on ordinary chapters", () => expect(soundtrackForPath("/quiz/3")?.id).toBe("q6fqIe8vMHk"));
   it("never overlays music on horror", () => expect(soundtrackForPath("/do-mal")).toBeNull());
   it("loops each provided video", () => {
-    for (const id of ["Qdv3DjIOl6w", "20UpB7XwQv4", "q6fqIe8vMHk"]) {
+    for (const id of ["Qdv3DjIOl6w", "20UpB7XwQv4", "q6fqIe8vMHk", "ORXurYriT8Q"]) {
       const url = new URL(youtubeEmbedUrl(id));
       expect(url.searchParams.get("loop")).toBe("1");
       expect(url.searchParams.get("playlist")).toBe(id);

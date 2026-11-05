@@ -31,10 +31,10 @@ function Letter() {
       <h1 className="script-heading letter-title">Uma cartinha pra você</h1>
       <div className="envelope-delivery"><div className="envelope">
         <div className="envelope-back" /><div className="envelope-flap" />
-        <div className="letter-paper" aria-hidden={!arrived}><p>Sua cartinha vem aqui ♡</p></div>
+        <div className="letter-paper" aria-hidden={!arrived}><p>de: Julei<br />para: Nikolai</p></div>
         <div className="envelope-front"><div className="envelope-embroidery" aria-hidden="true">✧ ❦ ✧</div></div><span className="envelope-seal" aria-hidden="true">♡</span>
       </div></div>
-      <div className="letter-next">{arrived && <Next to="/obrigada" />}</div>
+      <div className="letter-next">{arrived && <Next to="/carta" />}</div>
     </div>
   </main>;
 }
