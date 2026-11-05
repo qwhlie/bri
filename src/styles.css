@@ -73,6 +73,11 @@
   --success: oklch(0.4 0.085 155);
   --scene-shadow: 0 5px 26px oklch(0.1 0.02 255 / 18%);
   --horror-glow: 0 0 20px var(--destructive);
+  --horror-vignette: radial-gradient(ellipse at center, transparent 18%, oklch(0 0 0 / 72%) 65%, var(--night) 100%);
+  --horror-lines: repeating-linear-gradient(0deg, transparent 0 3px, oklch(0 0 0 / 30%) 3px 4px);
+  --horror-title-shadow: 2px 0 var(--destructive), -2px 0 var(--night), 0 0 38px var(--destructive);
+  --story-stitch: repeating-linear-gradient(90deg, var(--storybook-blue) 0 8px, transparent 8px 16px);
+  --story-lace: radial-gradient(circle at 12px 0, transparent 9px, var(--storybook-blue) 9px 10px, transparent 10px) 0 0 / 24px 20px;
   --code-trail: oklch(0 0 0 / 8%);
   --storybook-blue: oklch(0.54 0.065 240);
   --storybook-brown: oklch(0.47 0.05 65);
@@ -199,14 +204,39 @@
 .photo-dialog img { max-width: 100%; max-height: 80svh; object-fit: contain; }
 .photo-close { position: absolute; right: 20px; top: 20px; }
 .letter-preview { border-top: 1px solid var(--primary); border-bottom: 1px solid var(--primary); padding: 40px 24px; width: min(100%,540px); font-size: 30px; }
-.horror-heading { font-size: 160px; line-height: 1.2; font-weight: 400; text-shadow: var(--horror-glow); }
+.horror-heading { font-family: "Metal Mania", fantasy; font-size: 160px; line-height: 1.2; font-weight: 400; text-shadow: var(--horror-title-shadow); animation: horror-shift 7s ease-in-out infinite; }
 .horror-link { background: var(--night); border: 1px solid var(--destructive); color: var(--destructive); }
+.horror-scene { position: relative; display: grid; place-items: center; min-height: 100svh; overflow: hidden; background: var(--night); padding: 80px 24px; }
+.horror-face { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: .85; animation: horror-breathe 9s ease-in-out infinite; }
+.horror-code { position: absolute; inset: 0; opacity: .5; mix-blend-mode: screen; }
+.horror-scanlines { position: absolute; inset: 0; background: var(--horror-lines); pointer-events: none; }
+.horror-scanlines::after { content: ""; position: absolute; inset: 0; background: var(--horror-vignette); }
+.horror-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 40px; }
+.horror-audio { position: absolute; bottom: 24px; right: 24px; z-index: 3; display: flex; align-items: center; gap: 8px; color: var(--destructive); }
+.horror-audio input { width: 100px; accent-color: var(--destructive); }
 .story-decorations { position: absolute; inset: 0; pointer-events: none; }
 .storybook-frame { position: absolute; inset: 20px; border: 4px double var(--storybook-blue); border-radius: 44% 44% 12px 12px / 6% 6% 12px 12px; opacity: .42; }
 .storybook-frame::after { content: ""; position: absolute; inset: 6px; border: 1px dashed var(--storybook-brown); border-radius: inherit; opacity: .6; }
 .storybook-ducks { position: absolute; bottom: 24px; left: 30px; width: 150px; height: 150px; object-fit: contain; opacity: .8; }
 .storybook-sparkle { position: absolute; right: 40px; top: 40px; color: var(--storybook-brown); font-size: 52px; opacity: .55; }
-.moon-transition { animation: moon-soften 1400ms ease both; }
+.storybook-ribbon { position: absolute; top: 28px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 12px; color: var(--storybook-blue); opacity: .7; }
+.storybook-ribbon span { width: 90px; height: 16px; border-top: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(-8deg); }
+.storybook-ribbon span:last-child { transform: rotate(8deg); }
+.storybook-ribbon svg { width: 28px; height: 28px; }
+.storybook-sprig { position: absolute; top: 34%; width: 56px; height: 210px; display: flex; flex-direction: column; align-items: center; color: var(--storybook-blue); opacity: .35; }
+.storybook-sprig svg { width: 32px; height: 32px; stroke-width: 1; }
+.storybook-sprig span { height: 110px; width: 20px; border-left: 1px solid currentColor; border-radius: 50%; }
+.sprig-left { left: 30px; transform: rotate(-12deg); }
+.sprig-right { right: 30px; transform: rotate(12deg); }
+.storybook-bird { position: absolute; right: 64px; top: 60px; width: 120px; height: 120px; object-fit: contain; opacity: .62; transform: rotate(-10deg); }
+.storybook-postmark { position: absolute; right: 42px; bottom: 44px; width: 85px; height: 85px; border: 3px double var(--storybook-brown); border-radius: 50%; display: flex; align-items: center; justify-content: center; gap: 6px; color: var(--storybook-brown); transform: rotate(14deg); opacity: .42; }
+.storybook-postmark svg { width: 22px; }
+.storybook-bottom-lace { position: absolute; bottom: 22px; left: 190px; right: 145px; height: 20px; background: var(--story-lace); opacity: .4; }
+.storybook-frame::before { content: ""; position: absolute; top: 90px; bottom: 110px; left: -8px; width: 4px; background: var(--story-stitch); opacity: .4; }
+.moon-layer { opacity: 0; transition: opacity 2400ms cubic-bezier(.25,.1,.25,1); }
+.moon-layer-visible { opacity: 1; }
+.moon-ready .moon-layer { animation: moon-drift 11s linear both; }
+.moon-arrival { animation: moon-caption 1.8s 1.8s ease both; }
 .letter-scene { position: relative; min-height: 100svh; overflow: hidden; background: var(--storybook-blue); color: var(--primary); display: grid; place-items: center; padding: 80px 24px 160px; }
 .letter-center { position: relative; z-index: 4; width: min(100%, 560px); display: flex; flex-direction: column; align-items: center; gap: 28px; }
 .letter-title { color: var(--letter-paper); font-size: 58px; opacity: 0; animation: letter-appear 1.4s 7s ease forwards; }
@@ -233,6 +263,10 @@
 .hanging-plaque img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .hanging-plaque h1 { position: absolute; inset: 55% 13% 9%; display: grid; align-content: center; text-align: center; font-size: 38px; font-weight: 400; line-height: 1.22; color: var(--primary); text-wrap: balance; }
 @keyframes moon-soften { from { opacity: .5; } to { opacity: 1; } }
+@keyframes moon-drift { from { transform: scale(1.06); } to { transform: scale(1.14) translateY(-1%); } }
+@keyframes moon-caption { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes horror-breathe { 0%,100% { transform: scale(1); opacity: .6; } 50% { transform: scale(1.06); opacity: .95; } }
+@keyframes horror-shift { 0%,90%,100% { transform: translateX(0); } 92% { transform: translateX(-3px) skewX(-2deg); } 96% { transform: translateX(3px); } }
 @keyframes wave-rock { 50% { transform: translate(3%, -18px) rotate(2deg); } }
 @keyframes cloud-left { to { transform: translate(-110%, -25%) rotate(-10deg); opacity: 0; } }
 @keyframes cloud-right { to { transform: translate(110%, -25%) scaleX(-1) rotate(-10deg); opacity: 0; } }
@@ -245,6 +279,8 @@
 @keyframes plaque-sway { 0%,100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
 @media (max-width: 600px) { .storybook-frame { inset: 10px; } .storybook-ducks { width: 90px; height: 90px; bottom: 14px; left: 16px; opacity: .6; } .storybook-sparkle { right: 24px; top: 22px; font-size: 32px; } .letter-title { font-size: 44px; } .letter-center { gap: 20px; } .letter-bird { width: 130px; height: 130px; } .letter-wave-front { bottom: -110px; } .letter-wave-back { bottom: -60px; } .hanging-plaque h1 { font-size: 27px; } }
 @media (prefers-reduced-motion: reduce) { .letter-cloud, .letter-bird { display: none; } .envelope-delivery, .letter-title { opacity: 1; } .envelope-flap { transform: rotateX(180deg); z-index: 0; } .envelope-seal { display: none; } .letter-paper { transform: translateY(-115px); } }
+@media (max-width: 900px) { .storybook-sprig { display: none; } .storybook-bird { width: 85px; height: 85px; top: 40px; right: 40px; opacity: .4; } }
+@media (max-width: 600px) { .storybook-ribbon { top: 15px; } .storybook-ribbon span { width: 54px; height: 10px; } .storybook-ribbon svg { width: 20px; height: 20px; } .storybook-bird { width: 55px; height: 55px; top: 38px; right: 20px; } .storybook-postmark { width: 50px; height: 50px; bottom: 22px; right: 22px; } .storybook-postmark svg { width: 14px; } .storybook-bottom-lace { left: 114px; right: 85px; bottom: 14px; } }
 @keyframes record-spin { to { transform: rotate(360deg); } }
 @keyframes heart-float { 50% { transform: translateY(-15px) scale(1.05); } }
 @keyframes scene-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
