@@ -14,3 +14,6 @@
 - [x] Usar referências enviadas em oito composições, trocando a cada duas perguntas somente no quiz.
 - [x] Integrar os três links musicais em looping, sem sobreposição com terror.
 - [x] Verificar composições, animações e seleção das músicas no computador e celular.
+- [ ] Solicitar música automática, remover crédito visível de Xito e trocar trilha final.
+- [ ] Acelerar Inclusive e inserir carta aberta após o envelope endereçado.
+- [ ] Verificar navegação, músicas e carta no computador e celular.
