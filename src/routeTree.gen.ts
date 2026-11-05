@@ -10,14 +10,31 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AnimacaoRouteImport } from './routes/animacao'
+import { Route as CartinhaRouteImport } from './routes/cartinha'
 import { Route as DoMalRouteImport } from './routes/do-mal'
 import { Route as DuoRouteImport } from './routes/duo'
 import { Route as EscolhaRouteImport } from './routes/escolha'
+import { Route as InclusiveRouteImport } from './routes/inclusive'
+import { Route as LittleThingsRouteImport } from './routes/little-things'
+import { Route as MomentosRouteImport } from './routes/momentos'
+import { Route as MusicaRouteImport } from './routes/musica'
+import { Route as ObrigadaRouteImport } from './routes/obrigada'
 import { Route as QuizQuestionRouteImport } from './routes/quiz.$question'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnimacaoRoute = AnimacaoRouteImport.update({
+  id: '/animacao',
+  path: '/animacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CartinhaRoute = CartinhaRouteImport.update({
+  id: '/cartinha',
+  path: '/cartinha',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DoMalRoute = DoMalRouteImport.update({
@@ -35,6 +52,31 @@ const EscolhaRoute = EscolhaRouteImport.update({
   path: '/escolha',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InclusiveRoute = InclusiveRouteImport.update({
+  id: '/inclusive',
+  path: '/inclusive',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LittleThingsRoute = LittleThingsRouteImport.update({
+  id: '/little-things',
+  path: '/little-things',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MomentosRoute = MomentosRouteImport.update({
+  id: '/momentos',
+  path: '/momentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MusicaRoute = MusicaRouteImport.update({
+  id: '/musica',
+  path: '/musica',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ObrigadaRoute = ObrigadaRouteImport.update({
+  id: '/obrigada',
+  path: '/obrigada',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const QuizQuestionRoute = QuizQuestionRouteImport.update({
   id: '/quiz/$question',
   path: '/quiz/$question',
@@ -43,39 +85,104 @@ const QuizQuestionRoute = QuizQuestionRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/animacao': typeof AnimacaoRoute
+  '/cartinha': typeof CartinhaRoute
   '/do-mal': typeof DoMalRoute
   '/duo': typeof DuoRoute
   '/escolha': typeof EscolhaRoute
+  '/inclusive': typeof InclusiveRoute
+  '/little-things': typeof LittleThingsRoute
+  '/momentos': typeof MomentosRoute
+  '/musica': typeof MusicaRoute
+  '/obrigada': typeof ObrigadaRoute
   '/quiz/$question': typeof QuizQuestionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/animacao': typeof AnimacaoRoute
+  '/cartinha': typeof CartinhaRoute
   '/do-mal': typeof DoMalRoute
   '/duo': typeof DuoRoute
   '/escolha': typeof EscolhaRoute
+  '/inclusive': typeof InclusiveRoute
+  '/little-things': typeof LittleThingsRoute
+  '/momentos': typeof MomentosRoute
+  '/musica': typeof MusicaRoute
+  '/obrigada': typeof ObrigadaRoute
   '/quiz/$question': typeof QuizQuestionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/animacao': typeof AnimacaoRoute
+  '/cartinha': typeof CartinhaRoute
   '/do-mal': typeof DoMalRoute
   '/duo': typeof DuoRoute
   '/escolha': typeof EscolhaRoute
+  '/inclusive': typeof InclusiveRoute
+  '/little-things': typeof LittleThingsRoute
+  '/momentos': typeof MomentosRoute
+  '/musica': typeof MusicaRoute
+  '/obrigada': typeof ObrigadaRoute
   '/quiz/$question': typeof QuizQuestionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/do-mal' | '/duo' | '/escolha' | '/quiz/$question'
+  fullPaths:
+    | '/'
+    | '/animacao'
+    | '/cartinha'
+    | '/do-mal'
+    | '/duo'
+    | '/escolha'
+    | '/inclusive'
+    | '/little-things'
+    | '/momentos'
+    | '/musica'
+    | '/obrigada'
+    | '/quiz/$question'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/do-mal' | '/duo' | '/escolha' | '/quiz/$question'
-  id: '__root__' | '/' | '/do-mal' | '/duo' | '/escolha' | '/quiz/$question'
+  to:
+    | '/'
+    | '/animacao'
+    | '/cartinha'
+    | '/do-mal'
+    | '/duo'
+    | '/escolha'
+    | '/inclusive'
+    | '/little-things'
+    | '/momentos'
+    | '/musica'
+    | '/obrigada'
+    | '/quiz/$question'
+  id:
+    | '__root__'
+    | '/'
+    | '/animacao'
+    | '/cartinha'
+    | '/do-mal'
+    | '/duo'
+    | '/escolha'
+    | '/inclusive'
+    | '/little-things'
+    | '/momentos'
+    | '/musica'
+    | '/obrigada'
+    | '/quiz/$question'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnimacaoRoute: typeof AnimacaoRoute
+  CartinhaRoute: typeof CartinhaRoute
   DoMalRoute: typeof DoMalRoute
   DuoRoute: typeof DuoRoute
   EscolhaRoute: typeof EscolhaRoute
+  InclusiveRoute: typeof InclusiveRoute
+  LittleThingsRoute: typeof LittleThingsRoute
+  MomentosRoute: typeof MomentosRoute
+  MusicaRoute: typeof MusicaRoute
+  ObrigadaRoute: typeof ObrigadaRoute
   QuizQuestionRoute: typeof QuizQuestionRoute
 }
 
@@ -86,6 +193,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/animacao': {
+      id: '/animacao'
+      path: '/animacao'
+      fullPath: '/animacao'
+      preLoaderRoute: typeof AnimacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cartinha': {
+      id: '/cartinha'
+      path: '/cartinha'
+      fullPath: '/cartinha'
+      preLoaderRoute: typeof CartinhaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/do-mal': {
@@ -109,6 +230,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EscolhaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/inclusive': {
+      id: '/inclusive'
+      path: '/inclusive'
+      fullPath: '/inclusive'
+      preLoaderRoute: typeof InclusiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/little-things': {
+      id: '/little-things'
+      path: '/little-things'
+      fullPath: '/little-things'
+      preLoaderRoute: typeof LittleThingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/momentos': {
+      id: '/momentos'
+      path: '/momentos'
+      fullPath: '/momentos'
+      preLoaderRoute: typeof MomentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/musica': {
+      id: '/musica'
+      path: '/musica'
+      fullPath: '/musica'
+      preLoaderRoute: typeof MusicaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/obrigada': {
+      id: '/obrigada'
+      path: '/obrigada'
+      fullPath: '/obrigada'
+      preLoaderRoute: typeof ObrigadaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/quiz/$question': {
       id: '/quiz/$question'
       path: '/quiz/$question'
@@ -121,9 +277,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnimacaoRoute: AnimacaoRoute,
+  CartinhaRoute: CartinhaRoute,
   DoMalRoute: DoMalRoute,
   DuoRoute: DuoRoute,
   EscolhaRoute: EscolhaRoute,
+  InclusiveRoute: InclusiveRoute,
+  LittleThingsRoute: LittleThingsRoute,
+  MomentosRoute: MomentosRoute,
+  MusicaRoute: MusicaRoute,
+  ObrigadaRoute: ObrigadaRoute,
   QuizQuestionRoute: QuizQuestionRoute,
 }
 export const routeTree = rootRouteImport
