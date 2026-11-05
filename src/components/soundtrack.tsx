@@ -14,7 +14,6 @@ export function Soundtrack() {
       <Button variant="secondary" size="icon" onClick={() => setEnabled(value => !value)} aria-label={enabled ? "Parar música" : "Tocar música"} title={enabled ? "Parar música" : "Tocar música"}>
         {enabled ? <Pause size={18} /> : <Music2 size={18} />}
       </Button>
-      {enabled && pathname !== "/musica" && <span>{track.title}</span>}
     </div>
     {enabled && <iframe key={track.id} src={youtubeEmbedUrl(track.id)} title={pathname === "/musica" ? "Música da página" : track.title} width="224" height="200" allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen />}
   </aside>;

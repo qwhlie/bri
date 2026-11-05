@@ -21,6 +21,10 @@ export function isCorrectAnswer(question: number, option: number) {
   return quiz[question]?.correct.includes(option) ?? false;
 }
 
+export function canContinuePhrase(text: string) {
+  return text.trim().length > 0;
+}
+
 export function nextQuizStep(question: number) {
   if (question === 1) return "music";
   if (question === quiz.length) return "inclusive";
