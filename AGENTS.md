@@ -14,3 +14,5 @@
 - Use temporary client-only audio and clearly marked sample content until the owner supplies personal media; never invent personal memories or a letter.
 - Keep story decorations in the shared presentation and chapter animations in CSS with reduced-motion fallbacks, so animated chapters remain accessible without changing quiz logic.
 - Keep the temporary horror soundtrack in a client-only Web Audio hook with bounded gain, user volume controls and unmount cleanup, so it needs no remote media and never continues on other chapters.
+- Derive paired quiz collages and chapter soundtrack selection in a browser-safe presentation module, so their boundaries can be tested without rendering.
+- Mount one route-aware, user-activated visible YouTube player in the shared root and exclude horror, so requested recordings can loop without overlapping chapter audio or extracting copyrighted media.

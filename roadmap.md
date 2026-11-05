@@ -10,3 +10,7 @@
 - [x] Suavizar Inclusive e enriquecer a decoração dos fundos.
 - [x] Intensificar Do mal com som e fonte de terror.
 - [x] Atualizar frases do quiz e maiúsculas finais; verificar navegação.
+- [x] Acelerar levemente Inclusive e ampliar ondas, nuvens e acabamento do envelope.
+- [x] Usar referências enviadas em oito composições, trocando a cada duas perguntas somente no quiz.
+- [x] Integrar os três links musicais em looping, sem sobreposição com terror.
+- [x] Verificar composições, animações e seleção das músicas no computador e celular.

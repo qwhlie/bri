@@ -22,7 +22,7 @@ function Inclusive() {
   }, []);
   useEffect(() => {
     if (!loaded || frame === 2) return;
-    const timer = setTimeout(() => setFrame(f => f + 1), 2600);
+    const timer = setTimeout(() => setFrame(f => f + 1), 2200);
     return () => clearTimeout(timer);
   }, [loaded, frame]);
   return <main className={`surprise-scene lunar-scene moon-journey ${loaded ? "moon-ready" : ""}`}>

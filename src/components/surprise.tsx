@@ -6,6 +6,7 @@ import lace from "@/assets/intro/frame13.png.asset.json";
 import moon from "@/assets/moon/frame3.jpg.asset.json";
 import ducks from "@/assets/duck-chicks.png";
 import bird from "@/assets/letter-bird.png";
+import { QuizDecorations } from "@/components/quiz-decorations";
 
 export function StoryDecorations() {
   return <div className="story-decorations" aria-hidden="true">
@@ -21,10 +22,10 @@ export function StoryDecorations() {
   </div>;
 }
 
-export function Scene({ children, lunar = false, blurred = false }: { children: ReactNode; lunar?: boolean; blurred?: boolean }) {
+export function Scene({ children, lunar = false, blurred = false, quizQuestion }: { children: ReactNode; lunar?: boolean; blurred?: boolean; quizQuestion?: number }) {
   return <main className={`surprise-scene ${lunar ? "lunar-scene" : ""}`}>
     <img src={lunar ? moon.url : lace.url} alt="" className={`scene-background ${blurred || !lunar ? "scene-blurred" : ""}`} />
-    {!lunar && <StoryDecorations />}
+    {!lunar && (quizQuestion === undefined ? <StoryDecorations /> : <QuizDecorations question={quizQuestion} />)}
     {lunar && <div className="lunar-shade" />}
     <div className="scene-content">{children}</div>
   </main>;
