@@ -4,6 +4,7 @@ import anjos from "@/assets/anjinhos.png.asset.json";
 import inferno from "@/assets/inferno.png.asset.json";
 import lace from "@/assets/intro/frame13.png.asset.json";
 import { Button } from "@/components/ui/button";
+import { StoryDecorations } from "@/components/surprise";
 
 export const Route = createFileRoute("/escolha")({
   head: () => ({
@@ -32,9 +33,10 @@ function Escolha() {
           alt=""
           className={`absolute inset-0 h-full w-full scale-110 object-cover transition-opacity duration-500 ${
             src === bg ? "opacity-100" : "opacity-0"
-          } ${src !== lace.url ? "blur-md" : ""}`}
+          } blur-md`}
         />
       ))}
+      {!hover && <StoryDecorations />}
       <div className="relative z-10 flex flex-col items-center gap-10 px-6 text-center">
         <h1
           className={`script-heading transition-colors ${

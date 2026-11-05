@@ -12,3 +12,4 @@
 - Keep each surprise chapter as a separate TanStack leaf route with shared presentation in `src/components/surprise.tsx`, so the sequence has real page navigation.
 - Keep quiz content and answer validation in a browser-safe data module with one-based URL question numbers and zero-based answer indices, so correctness is independently testable.
 - Use temporary client-only audio and clearly marked sample content until the owner supplies personal media; never invent personal memories or a letter.
+- Keep story decorations in the shared presentation and chapter animations in CSS with reduced-motion fallbacks, so animated chapters remain accessible without changing quiz logic.

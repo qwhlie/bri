@@ -17,8 +17,8 @@ function Inclusive() {
   }, []);
   useEffect(() => {
     if (!loaded || frame === 2) return;
-    const timer = setTimeout(() => setFrame(f => f + 1), 220);
+    const timer = setTimeout(() => setFrame(f => f + 1), 1400);
     return () => clearTimeout(timer);
   }, [loaded, frame]);
-  return <main className="surprise-scene lunar-scene"><img className="scene-background" src={frames[frame]} alt="A lua emoldurada por um arco de pedra" />{frame === 2 && <div className="scene-content"><h1 className="script-heading">Inclusive...</h1><Next to="/animacao" /></div>}</main>;
+  return <main className="surprise-scene lunar-scene"><img key={frame} className="scene-background scene-blurred moon-transition" src={frames[frame]} alt="A lua emoldurada por um arco de pedra" />{frame === 2 && <div className="scene-content"><h1 className="script-heading">Inclusive...</h1><Next to="/animacao" /></div>}</main>;
 }

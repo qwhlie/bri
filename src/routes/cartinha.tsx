@@ -1,6 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail } from "lucide-react";
-import { Scene, Next, Ornament } from "@/components/surprise";
+import { useEffect, useState } from "react";
+import { Next } from "@/components/surprise";
 import { surpriseHead } from "@/lib/surprise-head";
+import linen from "@/assets/letter-linen.png.asset.json";
+import cloud from "@/assets/letter-cloud.png";
+import waves from "@/assets/letter-waves.png";
+import bird from "@/assets/letter-bird.png";
 export const Route = createFileRoute("/cartinha")({ head: () => surpriseHead("Uma cartinha pra você", "Palavras guardadas com carinho."), component: Letter });
-function Letter() { return <Scene><Ornament /><Mail size={40} strokeWidth={1} aria-hidden="true" /><h1 className="script-heading">Uma cartinha pra você</h1><div className="letter-preview">Sua cartinha vem aqui ♡</div><Next to="/obrigada" /></Scene>; }
+function Letter() {
+  const [arrived, setArrived] = useState(false);
+  useEffect(() => {
+    const delay = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 8500;
+    const timer = window.setTimeout(() => setArrived(true), delay);
+    return () => window.clearTimeout(timer);
+  }, []);
+  return <main className={`letter-scene ${arrived ? "letter-arrived" : ""}`}>
+    <img src={linen.url} className="scene-background" alt="" />
+    <div className="letter-wave letter-wave-back" aria-hidden="true"><img src={waves} alt="" /></div>
+    <div className="letter-wave letter-wave-front" aria-hidden="true"><img src={waves} alt="" /></div>
+    <img className="letter-cloud letter-cloud-left" src={cloud} alt="" />
+    <img className="letter-cloud letter-cloud-right" src={cloud} alt="" />
+    <img className="letter-bird" src={bird} alt="" />
+    <div className="letter-center">
+      <h1 className="script-heading letter-title">Uma cartinha pra você</h1>
+      <div className="envelope-delivery"><div className="envelope">
+        <div className="envelope-back" /><div className="envelope-flap" />
+        <div className="letter-paper" aria-hidden={!arrived}><p>Sua cartinha vem aqui ♡</p></div>
+        <div className="envelope-front" /><span className="envelope-seal" aria-hidden="true">♡</span>
+      </div></div>
+      <div className="letter-next">{arrived && <Next to="/obrigada" />}</div>
+    </div>
+  </main>;
+}

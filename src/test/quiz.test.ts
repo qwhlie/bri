@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { quiz, isCorrectAnswer, nextQuizStep } from "@/lib/quiz";
 
 describe("Julie's friendship quiz", () => {
-  const answers = ["Jogar comp no Valorant", "Pocahontas", "Será?", "ANAVITÓRIA", "Nicolas", "Bumbum", "Bloxburg", "Segredo", "Perfume", "Nicolas", "Nicolas", "JAMMMM", "Escova os dentes", "Sofi", "Laranja", "Vida pela sua"];
+  const answers = ["Jogar comp no Valorant", "Pocahontas", "Será?", "Ana Vitoria", "Nicolas", "Bumbum", "Bloxburg", "Segredo", "Perfume", "Nicolas", "Nicolas", "jam", "Escova os dentes", "Sofi", "Laranja", "Vida pela sua"];
   answers.forEach((answer, question) => {
     it(`question ${question + 1} accepts ${answer} and rejects every incorrect option`, () => {
       const item = quiz[question];
