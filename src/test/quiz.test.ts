@@ -1,7 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { quiz, isCorrectAnswer, nextQuizStep } from "@/lib/quiz";
+import { quiz, isCorrectAnswer, nextQuizStep, canContinuePhrase } from "@/lib/quiz";
 
 describe("Julie's friendship quiz", () => {
+  it("lets the person type the final phrase without grading it", () => {
+    expect(canContinuePhrase("vida pela sua")).toBe(true);
+    expect(canContinuePhrase("Minha própria continuação")).toBe(true);
+    expect(canContinuePhrase("   ")).toBe(false);
+  });
   const answers = ["Jogar comp no Valorant", "Pocahontas", "Será?", "Ana Vitoria", "Nicolas", "Bumbum", "Bloxburg", "Segredo", "Perfume", "Nicolas", "Nicolas", "Jam", "Escova os dentes", "Sofi", "Laranja", "Vida pela sua"];
   answers.forEach((answer, question) => {
     it(`question ${question + 1} accepts ${answer} and rejects every incorrect option`, () => {

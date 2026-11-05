@@ -1,9 +1,9 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { Check, X } from "lucide-react";
+import { ArrowRight, Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Scene, Next, Ornament } from "@/components/surprise";
-import { quiz, isCorrectAnswer, nextQuizStep } from "@/lib/quiz";
+import { quiz, isCorrectAnswer, nextQuizStep, canContinuePhrase } from "@/lib/quiz";
 import { surpriseHead } from "@/lib/surprise-head";
 
 export const Route = createFileRoute("/quiz/$question")({
@@ -21,8 +21,21 @@ function QuizPage() {
 
 function Question({ number }: { number: number }) {
   const [picked, setPicked] = useState<number | null>(null);
+  const [phrase, setPhrase] = useState("");
+  const navigate = useNavigate();
   const item = quiz[number - 1];
   if (!item) return null;
+  if (number === quiz.length) return <Scene quizQuestion={number}><section className="quiz-content">
+    <Ornament />
+    <h1 className="quiz-heading">Eu vou dar minha…</h1>
+    <form className="phrase-form" onSubmit={event => {
+      event.preventDefault();
+      if (canContinuePhrase(phrase)) void navigate({ to: "/inclusive" });
+    }}>
+      <input className="phrase-input" aria-label="Complete a frase" placeholder="…" value={phrase} onChange={event => setPhrase(event.target.value)} autoComplete="off" />
+      <Button type="submit" className="continue-button" size="lg" disabled={!canContinuePhrase(phrase)}>Continuar<ArrowRight aria-hidden="true" /></Button>
+    </form>
+  </section></Scene>;
   const next = nextQuizStep(number);
   return <Scene quizQuestion={number}><section className="quiz-content">
     <Ornament /><p className="question-number">{String(number).padStart(2, "0")} / {quiz.length}</p>
