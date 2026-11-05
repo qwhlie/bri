@@ -4,10 +4,16 @@ import { ArrowRight, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import lace from "@/assets/intro/frame13.png.asset.json";
 import moon from "@/assets/moon/frame3.jpg.asset.json";
+import ducks from "@/assets/duck-chicks.png";
+
+export function StoryDecorations() {
+  return <div className="story-decorations" aria-hidden="true"><div className="storybook-frame" /><img src={ducks} className="storybook-ducks" alt="" width={1024} height={1024} /><span className="storybook-sparkle">✧</span></div>;
+}
 
 export function Scene({ children, lunar = false, blurred = false }: { children: ReactNode; lunar?: boolean; blurred?: boolean }) {
   return <main className={`surprise-scene ${lunar ? "lunar-scene" : ""}`}>
-    <img src={lunar ? moon.url : lace.url} alt="" className={`scene-background ${blurred ? "scene-blurred" : ""}`} />
+    <img src={lunar ? moon.url : lace.url} alt="" className={`scene-background ${blurred || !lunar ? "scene-blurred" : ""}`} />
+    {!lunar && <StoryDecorations />}
     {lunar && <div className="lunar-shade" />}
     <div className="scene-content">{children}</div>
   </main>;

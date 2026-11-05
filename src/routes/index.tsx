@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { StoryDecorations } from "@/components/surprise";
 
 const mods = import.meta.glob("@/assets/intro/frame*.png.asset.json", { eager: true }) as Record<
   string,
@@ -51,7 +52,8 @@ function Index() {
 
   return (
     <main className="relative flex h-screen items-center justify-center overflow-hidden bg-background">
-      <img src={frames[i]} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <img src={frames[i]} alt="" className={`absolute inset-0 h-full w-full object-cover ${done ? "scene-blurred" : ""}`} />
+      {done && <StoryDecorations />}
       {done && (
         <div className="relative z-10 flex animate-in fade-in zoom-in-95 duration-700 flex-col items-center gap-6 px-6 text-center">
           <h1 className="script-heading text-primary">
