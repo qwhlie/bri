@@ -7,3 +7,6 @@
 - [x] Decorar fundos e animar a chegada da cartinha com ondas, nuvens e passarinho.
 - [x] Criar céu noturno e plaquinha pendurada na tela final.
 - [x] Verificar os ajustes no computador e celular.
+- [x] Suavizar Inclusive e enriquecer a decoração dos fundos.
+- [x] Intensificar Do mal com som e fonte de terror.
+- [x] Atualizar frases do quiz e maiúsculas finais; verificar navegação.
