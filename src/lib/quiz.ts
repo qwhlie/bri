@@ -10,7 +10,7 @@ export const quiz = [
   { question: "Agora, um hiperfoco seu:", options: ["Moto", "Perfume", "Filmes", "Músicas", "Guerreiras do K-pop"], correct: [1] },
   { question: "Quem troca o banner do duo no Valorant?", options: ["Theo", "Jake", "Shadow", "Xm7", "Nicolas"], correct: [4] },
   { question: "Quem tem realmente marra?", options: ["Nicolas", "Shadow", "Theo", "Vitor", "Rodney"], correct: [0] },
-  { question: "Complete a frase: entra na minha…", options: ["Casa", "Vida", "jam", "Mandinga", "Alma"], correct: [2] },
+  { question: "Complete a frase: entra na minha…", options: ["Casa", "Vida", "Jam", "Mandinga", "Alma"], correct: [2] },
   { question: "Você faz barulhos estranhos quando?", options: ["Perde no Valorant", "Entra em call", "Janta", "Nem te conto", "Escova os dentes"], correct: [4] },
   { question: "Quem é a cachorra mais fofa?", options: ["Sofi", "Sofia", "Cachorra", "Safada", "Goda"], correct: [0, 1, 2, 3, 4] },
   { question: "Que cor é o ursinho que você me deu por pura pressão?", options: ["Laranja", "Amarelo claro", "Vermelho", "Marrom", "Marrom amarelado"], correct: [0] },
