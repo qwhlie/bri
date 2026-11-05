@@ -10,33 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DoMalRouteImport } from './routes/do-mal'
+import { Route as DuoRouteImport } from './routes/duo'
+import { Route as EscolhaRouteImport } from './routes/escolha'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DoMalRoute = DoMalRouteImport.update({
+  id: '/do-mal',
+  path: '/do-mal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DuoRoute = DuoRouteImport.update({
+  id: '/duo',
+  path: '/duo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EscolhaRoute = EscolhaRouteImport.update({
+  id: '/escolha',
+  path: '/escolha',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/do-mal': typeof DoMalRoute
+  '/duo': typeof DuoRoute
+  '/escolha': typeof EscolhaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/do-mal': typeof DoMalRoute
+  '/duo': typeof DuoRoute
+  '/escolha': typeof EscolhaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/do-mal': typeof DoMalRoute
+  '/duo': typeof DuoRoute
+  '/escolha': typeof EscolhaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/do-mal' | '/duo' | '/escolha'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/do-mal' | '/duo' | '/escolha'
+  id: '__root__' | '/' | '/do-mal' | '/duo' | '/escolha'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DoMalRoute: typeof DoMalRoute
+  DuoRoute: typeof DuoRoute
+  EscolhaRoute: typeof EscolhaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +78,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/do-mal': {
+      id: '/do-mal'
+      path: '/do-mal'
+      fullPath: '/do-mal'
+      preLoaderRoute: typeof DoMalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/duo': {
+      id: '/duo'
+      path: '/duo'
+      fullPath: '/duo'
+      preLoaderRoute: typeof DuoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/escolha': {
+      id: '/escolha'
+      path: '/escolha'
+      fullPath: '/escolha'
+      preLoaderRoute: typeof EscolhaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DoMalRoute: DoMalRoute,
+  DuoRoute: DuoRoute,
+  EscolhaRoute: EscolhaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
