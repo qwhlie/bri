@@ -31,7 +31,7 @@ function Duo() {
   const answer = (idx: number) => {
     if (picked !== null) return;
     setPicked(idx);
-    if (idx === QUIZ[step].answer) setScore((s) => s + 1);
+    if (idx === QUIZ[step]!.answer) setScore((s) => s + 1);
     setTimeout(() => {
       setPicked(null);
       setStep((s) => s + 1);
@@ -58,11 +58,11 @@ function Duo() {
             <p className="mb-2 text-sm text-muted-foreground">
               pergunta {step + 1} de {QUIZ.length}
             </p>
-            <h2 className="mb-6 font-serif text-3xl text-primary">{QUIZ[step].q}</h2>
+            <h2 className="mb-6 font-serif text-3xl text-primary">{QUIZ[step]!.q}</h2>
             <div className="flex flex-col gap-3">
-              {QUIZ[step].options.map((o, idx) => {
+              {QUIZ[step]!.options.map((o, idx) => {
                 const state =
-                  picked === null ? "" : idx === QUIZ[step].answer ? "bg-primary text-primary-foreground" : idx === picked ? "bg-destructive text-destructive-foreground" : "opacity-50";
+                  picked === null ? "" : idx === QUIZ[step]!.answer ? "bg-primary text-primary-foreground" : idx === picked ? "bg-destructive text-destructive-foreground" : "opacity-50";
                 return (
                   <button
                     key={o}

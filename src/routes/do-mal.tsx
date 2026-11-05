@@ -40,7 +40,7 @@ function DoMal() {
       ctx.fillStyle = red || "red";
       ctx.font = `${size}px monospace`;
       drops.forEach((y, x) => {
-        ctx.fillText(CHARS[Math.floor(Math.random() * CHARS.length)], x * size, y * size);
+        ctx.fillText(CHARS[Math.floor(Math.random() * CHARS.length)]!, x * size, y * size);
         drops[x] = y * size > c.height && Math.random() > 0.97 ? 0 : y + 1;
       });
     }, 50);
