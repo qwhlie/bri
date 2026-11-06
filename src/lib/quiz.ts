@@ -14,7 +14,7 @@ export const quiz = [
   { question: "Você faz barulhos estranhos quando?", options: ["Perde no Valorant", "Entra em call", "Janta", "Nem te conto", "Escova os dentes"], correct: [4] },
   { question: "Quem é a cachorra mais fofa?", options: ["Sofi", "Sofia", "Cachorra", "Safada", "Goda"], correct: [0, 1, 2, 3, 4] },
   { question: "Que cor é o ursinho que você me deu por pura pressão?", options: ["Laranja", "Amarelo claro", "Vermelho", "Marrom", "Marrom amarelado"], correct: [0] },
-  { question: "Complete a frase: eu vou dar minha…", options: ["Vida pela sua"], correct: [0] },
+  { question: "Eu sou sua...", options: ["bruxinha"], correct: [0] },
 ];
 
 export function isCorrectAnswer(question: number, option: number) {
@@ -23,6 +23,10 @@ export function isCorrectAnswer(question: number, option: number) {
 
 export function canContinuePhrase(text: string) {
   return text.trim().length > 0;
+}
+
+export function isCorrectPhrase(text: string) {
+  return text.trim().toLocaleLowerCase("pt-BR") === "bruxinha";
 }
 
 export function nextQuizStep(question: number) {
