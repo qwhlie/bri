@@ -2,6 +2,11 @@ import { describe, expect, it } from "vitest";
 import { quiz, isCorrectAnswer, nextQuizStep, canContinuePhrase, isCorrectPhrase } from "@/lib/quiz";
 
 describe("Julie's friendship quiz", () => {
+  it("prevents another submission after an incorrect typed answer", () => {
+    expect(canContinuePhrase("bruxa", true)).toBe(false);
+    expect(canContinuePhrase("bruxinha", true)).toBe(false);
+    expect(canContinuePhrase("bruxinha", false)).toBe(true);
+  });
   it("accepts bruxinha as the typed final answer and rejects other answers", () => {
     expect(isCorrectPhrase("bruxinha")).toBe(true);
     expect(isCorrectPhrase(" Bruxinha ")).toBe(true);

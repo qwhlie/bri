@@ -31,14 +31,14 @@ function Question({ number }: { number: number }) {
     <h1 className="quiz-heading">{item.question}</h1>
     <form className="phrase-form" onSubmit={event => {
       event.preventDefault();
-      if (!canContinuePhrase(phrase)) return;
+      if (!canContinuePhrase(phrase, phraseWrong)) return;
       if (isCorrectPhrase(phrase)) void navigate({ to: "/inclusive" });
       else setPhraseWrong(true);
     }}>
-      <input className="phrase-input" aria-label="Complete a frase" aria-invalid={phraseWrong} aria-describedby={phraseWrong ? "phrase-error" : undefined} placeholder="…" value={phrase} onChange={event => { setPhrase(event.target.value); setPhraseWrong(false); }} autoComplete="off" />
-      <Button type="submit" className="continue-button" size="lg" disabled={!canContinuePhrase(phrase)}>Continuar<ArrowRight aria-hidden="true" /></Button>
+      <input className="phrase-input" aria-label="Complete a frase" readOnly={phraseWrong} aria-invalid={phraseWrong} aria-describedby={phraseWrong ? "phrase-error" : undefined} placeholder="…" value={phrase} onChange={event => { if (!phraseWrong) setPhrase(event.target.value); }} autoComplete="off" />
+      {!phraseWrong && <Button type="submit" className="continue-button" size="lg" disabled={!canContinuePhrase(phrase)}>Continuar<ArrowRight aria-hidden="true" /></Button>}
     </form>
-    <div className="quiz-feedback" aria-live="polite">{phraseWrong && <><X aria-label="Resposta incorreta" /><p id="phrase-error">Vc errou bri, era bruxinha</p><Next to="/inclusive" /></>}</div>
+    <div className="quiz-feedback" aria-live="polite">{phraseWrong && <><X aria-label="Resposta incorreta" /><p id="phrase-error">Vc errou Bri, era bruxinha</p><Next to="/inclusive" /></>}</div>
   </section></Scene>;
   const next = nextQuizStep(number);
   return <Scene quizQuestion={number}><section className="quiz-content">
