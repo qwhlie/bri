@@ -21,8 +21,8 @@ export function isCorrectAnswer(question: number, option: number) {
   return quiz[question]?.correct.includes(option) ?? false;
 }
 
-export function canContinuePhrase(text: string) {
-  return text.trim().length > 0;
+export function canContinuePhrase(text: string, answeredWrong = false) {
+  return !answeredWrong && text.trim().length > 0;
 }
 
 export function isCorrectPhrase(text: string) {
