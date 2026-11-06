@@ -19,3 +19,6 @@
 - [x] Verificar navegação, músicas e carta no computador e celular.
 - [x] Deixar player mais discreto sem ocultar o vídeo.
 - [x] Trocar última pergunta por resposta digitada e verificar continuidade.
+- [x] Atualizar escolhas Belle/May, frases e destinatários das cartas.
+- [x] Retirar intervalo Xito da sequência e verificar continuidade.
+- [x] Animar brilhos finais e verificar no computador e celular.

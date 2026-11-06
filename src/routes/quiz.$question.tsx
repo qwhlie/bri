@@ -48,6 +48,6 @@ function Question({ number }: { number: number }) {
       </Button>;
     })}</div>
     <div className="quiz-feedback" aria-live="polite">{picked !== null && <>{number !== quiz.length && <p>{isCorrectAnswer(number - 1, picked) ? "Não fez mais que a obrigação" : "Eu não acredito q vc errou vey"}</p>}
-      {next === "music" ? <Next to="/musica" /> : next === "inclusive" ? <Next to="/inclusive" /> : <Next to="/quiz/$question" question={next} />}</>}</div>
+      {next === "inclusive" ? <Next to="/inclusive" /> : <Next to="/quiz/$question" question={next} />}</>}</div>
   </section></Scene>;
 }
