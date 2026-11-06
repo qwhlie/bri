@@ -6,7 +6,7 @@ import linen from "@/assets/letter-linen.png.asset.json";
 import cloud from "@/assets/letter-cloud.png";
 import waves from "@/assets/letter-waves.png";
 import bird from "@/assets/letter-bird.png";
-export const Route = createFileRoute("/cartinha")({ head: () => surpriseHead("Uma cartinha pra você", "Palavras guardadas com carinho."), component: Letter });
+export const Route = createFileRoute("/cartinha")({ head: () => surpriseHead("Uma carta de Belle para Bri", "Palavras guardadas com carinho para Bri."), component: Letter });
 function Letter() {
   const [arrived, setArrived] = useState(false);
   useEffect(() => {
@@ -28,10 +28,9 @@ function Letter() {
      <img className="letter-cloud letter-cloud-center-right" src={cloud} alt="" />
     <img className="letter-bird" src={bird} alt="" />
     <div className="letter-center">
-      <h1 className="script-heading letter-title">Uma cartinha pra você</h1>
       <div className="envelope-delivery"><div className="envelope">
         <div className="envelope-back" /><div className="envelope-flap" />
-        <div className="letter-paper" aria-hidden={!arrived}><p>de: Julei<br />para: Nikolai</p></div>
+        <div className="letter-paper" aria-hidden={!arrived}><p>de: Belle<br />para: Bri</p></div>
         <div className="envelope-front"><div className="envelope-embroidery" aria-hidden="true">✧ ❦ ✧</div></div><span className="envelope-seal" aria-hidden="true">♡</span>
       </div></div>
       <div className="letter-next">{arrived && <Next to="/carta" />}</div>

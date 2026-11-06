@@ -23,7 +23,7 @@ describe("Julie's friendship quiz", () => {
     for (let option = 0; option < 5; option++) expect(isCorrectAnswer(13, option)).toBe(true);
   });
   it("has only vida pela sua for the last question", () => expect(quiz[15]?.options).toEqual(["Vida pela sua"]));
-  it("places music immediately after the first question", () => expect(nextQuizStep(1)).toBe("music"));
+  it("skips the removed Xito chapter after the first question", () => expect(nextQuizStep(1)).toBe("2"));
   it("continues to the moon after question 16", () => expect(nextQuizStep(16)).toBe("inclusive"));
   it("continues other questions in sequence", () => { for (let question = 2; question < 16; question++) expect(nextQuizStep(question)).toBe(String(question + 1)); });
 });

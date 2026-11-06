@@ -26,7 +26,6 @@ export function canContinuePhrase(text: string) {
 }
 
 export function nextQuizStep(question: number) {
-  if (question === 1) return "music";
   if (question === quiz.length) return "inclusive";
   return String(question + 1);
 }

@@ -10,9 +10,9 @@ export const Route = createFileRoute("/escolha")({
   head: () => ({
     meta: [
       { title: "Você já sabe quem fez?" },
-      { name: "description", content: "Escolha: duo ou do mal." },
+      { name: "description", content: "Uma surpresa: Belle ou May?" },
       { property: "og:title", content: "Você já sabe quem fez?" },
-      { property: "og:description", content: "Escolha: duo ou do mal." },
+      { property: "og:description", content: "Uma surpresa: Belle ou May?" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -53,7 +53,7 @@ function Escolha() {
             onFocus={() => setHover("duo")}
             onBlur={() => setHover(null)}
           >
-            Duo
+            Belle
           </Link></Button>
           <Button asChild variant="destructive" className="continue-button"><Link
             to="/do-mal"
@@ -62,7 +62,7 @@ function Escolha() {
             onFocus={() => setHover("mal")}
             onBlur={() => setHover(null)}
           >
-            Do mal
+            May
           </Link></Button>
         </div>
       </div>

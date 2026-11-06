@@ -8,9 +8,9 @@ import { useHorrorAudio } from "@/hooks/use-horror-audio";
 export const Route = createFileRoute("/do-mal")({
   head: () => ({
     meta: [
-      { title: "Gg vey — O lado do mal" },
+      { title: "Vou te dar uns tapa — May" },
       { name: "description", content: "Escolha errada." },
-      { property: "og:title", content: "Gg vey — O lado do mal" },
+      { property: "og:title", content: "Vou te dar uns tapa — May" },
       { property: "og:description", content: "Escolha errada." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -71,7 +71,7 @@ function DoMal() {
       <div className="horror-scanlines" aria-hidden="true" />
       <div className="horror-content">
         <h1 className="horror-heading text-destructive">
-          Gg vey
+          Vou te dar uns tapa
         </h1>
         <Button asChild className="continue-button horror-link"><Link
           to="/escolha"
