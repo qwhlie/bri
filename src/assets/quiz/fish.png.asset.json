@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "be688b42-061a-449e-a96a-7bb427f824e5",
-  "project_id": "1307fc76-6f41-4896-9c20-b59cac55813c",
-  "url": "/__l5e/assets-v1/be688b42-061a-449e-a96a-7bb427f824e5/quiz-fish.png",
-  "r2_key": "a/v1/1307fc76-6f41-4896-9c20-b59cac55813c/be688b42-061a-449e-a96a-7bb427f824e5/quiz-fish.png",
-  "original_filename": "quiz-fish.png",
-  "size": 723597,
   "content_type": "image/png",
-  "created_at": "2026-11-05T05:59:40Z"
+  "created_at": "2026-11-05T05:59:40Z",
+  "original_filename": "quiz-fish.png",
+  "project_id": "afb6c8f9-b853-4e38-aba6-498b367ffdca",
+  "r2_key": "a/v1/afb6c8f9-b853-4e38-aba6-498b367ffdca/be688b42-061a-449e-a96a-7bb427f824e5/quiz-fish.png",
+  "size": 723597,
+  "url": "/__l5e/assets-v1/be688b42-061a-449e-a96a-7bb427f824e5/quiz-fish.png",
+  "version": 1
 }

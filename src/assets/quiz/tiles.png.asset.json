@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "4e8ade5e-13d2-42d4-9a03-7d6a3c91fbd5",
-  "project_id": "1307fc76-6f41-4896-9c20-b59cac55813c",
-  "url": "/__l5e/assets-v1/4e8ade5e-13d2-42d4-9a03-7d6a3c91fbd5/quiz-tiles.png",
-  "r2_key": "a/v1/1307fc76-6f41-4896-9c20-b59cac55813c/4e8ade5e-13d2-42d4-9a03-7d6a3c91fbd5/quiz-tiles.png",
-  "original_filename": "quiz-tiles.png",
-  "size": 765833,
   "content_type": "image/png",
-  "created_at": "2026-11-05T05:59:40Z"
+  "created_at": "2026-11-05T05:59:40Z",
+  "original_filename": "quiz-tiles.png",
+  "project_id": "afb6c8f9-b853-4e38-aba6-498b367ffdca",
+  "r2_key": "a/v1/afb6c8f9-b853-4e38-aba6-498b367ffdca/4e8ade5e-13d2-42d4-9a03-7d6a3c91fbd5/quiz-tiles.png",
+  "size": 765833,
+  "url": "/__l5e/assets-v1/4e8ade5e-13d2-42d4-9a03-7d6a3c91fbd5/quiz-tiles.png",
+  "version": 1
 }

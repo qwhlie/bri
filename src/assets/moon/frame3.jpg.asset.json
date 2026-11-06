@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "de0878db-3f16-4353-9a14-a9a2b6ec85fc",
-  "project_id": "1307fc76-6f41-4896-9c20-b59cac55813c",
-  "url": "/__l5e/assets-v1/de0878db-3f16-4353-9a14-a9a2b6ec85fc/moon-3.jpg",
-  "r2_key": "a/v1/1307fc76-6f41-4896-9c20-b59cac55813c/de0878db-3f16-4353-9a14-a9a2b6ec85fc/moon-3.jpg",
-  "original_filename": "moon-3.jpg",
-  "size": 185813,
   "content_type": "image/jpeg",
-  "created_at": "2026-11-05T04:34:42Z"
+  "created_at": "2026-11-05T04:34:42Z",
+  "original_filename": "moon-3.jpg",
+  "project_id": "afb6c8f9-b853-4e38-aba6-498b367ffdca",
+  "r2_key": "a/v1/afb6c8f9-b853-4e38-aba6-498b367ffdca/de0878db-3f16-4353-9a14-a9a2b6ec85fc/moon-3.jpg",
+  "size": 185813,
+  "url": "/__l5e/assets-v1/de0878db-3f16-4353-9a14-a9a2b6ec85fc/moon-3.jpg",
+  "version": 1
 }

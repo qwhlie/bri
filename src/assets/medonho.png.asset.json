@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "41e3d7bd-35b7-4449-96a3-590340993922",
-  "project_id": "1307fc76-6f41-4896-9c20-b59cac55813c",
-  "url": "/__l5e/assets-v1/41e3d7bd-35b7-4449-96a3-590340993922/medonho.png",
-  "r2_key": "a/v1/1307fc76-6f41-4896-9c20-b59cac55813c/41e3d7bd-35b7-4449-96a3-590340993922/medonho.png",
-  "original_filename": "medonho.png",
-  "size": 144039,
   "content_type": "image/png",
-  "created_at": "2026-11-05T04:14:42Z"
+  "created_at": "2026-11-05T04:14:42Z",
+  "original_filename": "medonho.png",
+  "project_id": "afb6c8f9-b853-4e38-aba6-498b367ffdca",
+  "r2_key": "a/v1/afb6c8f9-b853-4e38-aba6-498b367ffdca/41e3d7bd-35b7-4449-96a3-590340993922/medonho.png",
+  "size": 144039,
+  "url": "/__l5e/assets-v1/41e3d7bd-35b7-4449-96a3-590340993922/medonho.png",
+  "version": 1
 }

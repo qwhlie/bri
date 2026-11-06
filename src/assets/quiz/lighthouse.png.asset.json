@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "8b82017f-1fae-4c9a-90e6-fbb7f141c0ce",
-  "project_id": "1307fc76-6f41-4896-9c20-b59cac55813c",
-  "url": "/__l5e/assets-v1/8b82017f-1fae-4c9a-90e6-fbb7f141c0ce/quiz-lighthouse.png",
-  "r2_key": "a/v1/1307fc76-6f41-4896-9c20-b59cac55813c/8b82017f-1fae-4c9a-90e6-fbb7f141c0ce/quiz-lighthouse.png",
-  "original_filename": "quiz-lighthouse.png",
-  "size": 126830,
   "content_type": "image/webp",
-  "created_at": "2026-11-05T05:59:40Z"
+  "created_at": "2026-11-05T05:59:40Z",
+  "original_filename": "quiz-lighthouse.png",
+  "project_id": "afb6c8f9-b853-4e38-aba6-498b367ffdca",
+  "r2_key": "a/v1/afb6c8f9-b853-4e38-aba6-498b367ffdca/8b82017f-1fae-4c9a-90e6-fbb7f141c0ce/quiz-lighthouse.png",
+  "size": 126830,
+  "url": "/__l5e/assets-v1/8b82017f-1fae-4c9a-90e6-fbb7f141c0ce/quiz-lighthouse.png",
+  "version": 1
 }
