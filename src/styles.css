@@ -198,13 +198,30 @@
 .floating-heart { width: 140px; height: 140px; stroke-width: .6; animation: heart-float 3s ease-in-out infinite; }
 .folder-control { width: 100px; height: 85px; background: transparent; color: var(--primary); box-shadow: none; }
 .folder-control svg { width: 70px; height: 70px; stroke-width: 1; }
-.photo-grid { width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
-.photo-button { height: auto; padding: 8px 8px 24px; background: var(--card); border-radius: 3px; box-shadow: var(--scene-shadow); transform: rotate(-3deg); }
-.photo-button:nth-child(2n) { transform: rotate(3deg); }
-.photo-button img { width: 100%; aspect-ratio: 1; object-fit: cover; }
-.photo-dialog { position: fixed; inset: 0; z-index: 50; background: var(--night); display: flex; align-items: center; justify-content: center; padding: 64px 20px; }
-.photo-dialog img { max-width: 100%; max-height: 80svh; object-fit: contain; }
-.photo-close { position: absolute; right: 20px; top: 20px; }
+.polaroid-pile { position: relative; width: min(100%, 570px); height: 365px; margin: 16px 0; isolation: isolate; }
+.moment-polaroid { position: absolute; width: 205px; height: 242px; padding: 10px 10px 6px; display: flex; flex-direction: column; gap: 6px; border-radius: 2px; background: var(--letter-paper); color: var(--storybook-blue); box-shadow: var(--envelope-shadow); border: 1px solid var(--border); transition: transform .25s ease, box-shadow .25s ease; }
+.moment-polaroid:hover, .moment-polaroid:focus-visible { z-index: 12; box-shadow: var(--scene-shadow); }
+.moment-polaroid img { width: 100%; height: 185px; object-fit: cover; flex-shrink: 0; }
+.moment-polaroid span { font-size: 25px; line-height: 1.2; }
+.polaroid-0 { left: 2%; top: 12%; transform: rotate(-13deg); }
+.polaroid-1 { right: 5%; top: 9%; transform: rotate(12deg); }
+.polaroid-2 { left: 22%; top: 2%; transform: rotate(-4deg); }
+.polaroid-3 { left: 7%; top: 20%; transform: rotate(8deg); }
+.polaroid-4 { right: 1%; top: 23%; transform: rotate(17deg); }
+.polaroid-5 { left: 15%; top: 29%; transform: rotate(-15deg); }
+.polaroid-6 { right: 12%; top: 29%; transform: rotate(5deg); }
+.polaroid-7 { left: 32%; top: 13%; transform: rotate(9deg); }
+.polaroid-8 { right: 7%; top: 15%; transform: rotate(-8deg); }
+.polaroid-9 { left: 17%; top: 19%; transform: rotate(-7deg); }
+.moment-overlay { position: fixed; inset: 0; z-index: 50; background: color-mix(in oklch, var(--night) 88%, transparent); backdrop-filter: blur(8px); }
+.moment-viewer { position: fixed; inset: 0; z-index: 51; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 64px 24px 24px; outline: none; }
+.moment-close { position: absolute; right: 20px; top: 20px; }
+.moment-expanded { width: fit-content; max-width: min(100%, 1100px); padding: 12px 12px 8px; background: var(--letter-paper); color: var(--storybook-blue); box-shadow: var(--envelope-shadow); }
+.moment-expanded img { display: block; width: auto; max-width: 100%; height: auto; max-height: calc(100svh - 230px); object-fit: contain; margin: 0 auto; }
+.moment-expanded figcaption { min-height: 42px; text-align: center; font-size: 28px; line-height: 1.5; }
+.moment-navigation { display: flex; gap: 24px; }
+.moment-navigation button { width: 48px; height: 48px; border-radius: 50%; }
+@media (max-width: 600px) { .polaroid-pile { width: min(100%, 360px); height: 290px; margin: 8px 0; } .moment-polaroid { width: 150px; height: 185px; padding: 8px 8px 4px; } .moment-polaroid img { height: 135px; } .moment-polaroid span { font-size: 22px; } .moment-viewer { padding: 64px 12px 24px; } .moment-expanded { padding: 8px 8px 4px; } }
 .letter-preview { border-top: 1px solid var(--primary); border-bottom: 1px solid var(--primary); padding: 40px 24px; width: min(100%,540px); font-size: 30px; }
 .horror-heading { font-family: "Metal Mania", fantasy; font-size: 96px; max-width: 950px; text-align: center; text-wrap: balance; line-height: 1.2; font-weight: 400; text-shadow: var(--horror-title-shadow); animation: horror-shift 7s ease-in-out infinite; }
 .horror-link { background: var(--night); border: 1px solid var(--destructive); color: var(--destructive); }

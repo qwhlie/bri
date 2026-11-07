@@ -22,3 +22,4 @@
 - [x] Atualizar escolhas Belle/May, frases e destinatários das cartas.
 - [x] Retirar intervalo Xito da sequência e verificar continuidade.
 - [x] Animar brilhos finais e verificar no computador e celular.
+- [ ] Colocar as dez fotos em polaroids empilhadas e verificar navegação ampliada no computador e celular.
