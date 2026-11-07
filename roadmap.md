@@ -23,3 +23,4 @@
 - [x] Retirar intervalo Xito da sequência e verificar continuidade.
 - [x] Animar brilhos finais e verificar no computador e celular.
 - [x] Colocar as dez fotos em polaroids empilhadas e verificar navegação ampliada no computador e celular.
+- [ ] Adicionar segunda página de memórias com as nove imagens selecionadas e verificar a sequência e as setas.
