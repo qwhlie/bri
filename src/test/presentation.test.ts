@@ -9,15 +9,15 @@ describe("chapter presentation rules", () => {
     expect(quizDecorationGroup(0)).toBeNull();
   });
   it("uses the supplied Xito video for the music chapter", () => expect(soundtrackForPath("/musica")?.id).toBe("Qdv3DjIOl6w"));
-  it("switches to the supplied Wicked Game video on the letter", () => expect(soundtrackForPath("/cartinha")?.id).toBe("20UpB7XwQv4"));
-  it("keeps Wicked Game on the letter outside its envelope", () => expect(soundtrackForPath("/carta")?.id).toBe("20UpB7XwQv4"));
-  it("keeps Wicked Game on the final page", () => expect(soundtrackForPath("/obrigada")?.id).toBe("20UpB7XwQv4"));
+  it("switches to the supplied You Are the Right One video on the letter", () => expect(soundtrackForPath("/cartinha")?.id).toBe("Y_hdQXQfsNg"));
+  it("keeps You Are the Right One on the letter outside its envelope", () => expect(soundtrackForPath("/carta")?.id).toBe("Y_hdQXQfsNg"));
+  it("keeps You Are the Right One on the final page", () => expect(soundtrackForPath("/obrigada")?.id).toBe("Y_hdQXQfsNg"));
   it("accelerates the moon frames from the previous 2200ms", () => expect(MOON_FRAME_MS).toBeLessThan(2200));
   it("requests automatic playback", () => expect(new URL(youtubeEmbedUrl("ORXurYriT8Q")).searchParams.get("autoplay")).toBe("1"));
   it("uses Combo da Sorte on ordinary chapters", () => expect(soundtrackForPath("/quiz/3")?.id).toBe("2NAlWaC1v44"));
   it("never overlays music on horror", () => expect(soundtrackForPath("/do-mal")).toBeNull());
   it("loops each provided video", () => {
-    for (const id of ["Qdv3DjIOl6w", "20UpB7XwQv4", "2NAlWaC1v44"]) {
+    for (const id of ["Qdv3DjIOl6w", "Y_hdQXQfsNg", "2NAlWaC1v44"]) {
       const url = new URL(youtubeEmbedUrl(id));
       expect(url.searchParams.get("loop")).toBe("1");
       expect(url.searchParams.get("playlist")).toBe(id);
