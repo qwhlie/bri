@@ -16,4 +16,4 @@
 - Keep the temporary horror soundtrack in a client-only Web Audio hook with bounded gain, user volume controls and unmount cleanup, so it needs no remote media and never continues on other chapters.
 - Derive paired quiz collages and chapter soundtrack selection in a browser-safe presentation module, so their boundaries can be tested without rendering.
 - Mount one route-aware visible YouTube player in the shared root, request autoplay with a manual playback fallback, and exclude horror, so recordings never overlap chapter audio and browser restrictions remain respected.
-- Keep the Moments album's uploaded photos as CDN asset pointers and its viewer in an accessible modal with cyclic navigation, so original images stay intact and keyboard focus remains contained.
+- Keep memory chapters on separate leaf routes sharing `MemoryAlbum`, with uploaded photos as CDN pointers and an accessible modal with cyclic navigation, so presentation stays consistent and keyboard focus remains contained.
