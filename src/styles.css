@@ -221,7 +221,7 @@
 .moment-expanded figcaption { min-height: 42px; text-align: center; font-size: 28px; line-height: 1.5; }
 .moment-navigation { display: flex; gap: 24px; }
 .moment-navigation button { width: 48px; height: 48px; border-radius: 50%; }
-@media (max-width: 600px) { .polaroid-pile { width: min(100%, 360px); height: 290px; margin: 8px 0; } .moment-polaroid { width: 150px; height: 185px; padding: 8px 8px 4px; } .moment-polaroid img { height: 135px; } .moment-polaroid span { font-size: 22px; } .moment-viewer { padding: 64px 12px 24px; } .moment-expanded { padding: 8px 8px 4px; } }
+@media (max-width: 600px) { .polaroid-pile { width: min(100%, 360px); height: 290px; margin: 8px 0; } .moment-polaroid { width: 150px; height: 185px; padding: 8px 8px 4px; } .moment-polaroid img { height: 135px; } .moment-polaroid span { font-size: 22px; } .moment-viewer { padding: 64px 12px 24px; } .moment-expanded { padding: 8px 8px 4px; } .surprise-scene:has(.polaroid-pile) + .soundtrack { position: relative; right: auto; bottom: auto; margin: 14px 14px 14px auto; width: 224px; } }
 .letter-preview { border-top: 1px solid var(--primary); border-bottom: 1px solid var(--primary); padding: 40px 24px; width: min(100%,540px); font-size: 30px; }
 .horror-heading { font-family: "Metal Mania", fantasy; font-size: 96px; max-width: 950px; text-align: center; text-wrap: balance; line-height: 1.2; font-weight: 400; text-shadow: var(--horror-title-shadow); animation: horror-shift 7s ease-in-out infinite; }
 .horror-link { background: var(--night); border: 1px solid var(--destructive); color: var(--destructive); }
