@@ -51,7 +51,7 @@ function Question({ number }: { number: number }) {
         <span>{option}</span>{revealed && correct ? <Check aria-label="Resposta correta" /> : revealed && picked === index ? <X aria-label="Resposta incorreta" /> : <span className="option-dot" aria-hidden="true" />}
       </Button>;
     })}</div>
-    <div className="quiz-feedback" aria-live="polite">{picked !== null && <>{number !== quiz.length && <p>{isCorrectAnswer(number - 1, picked) ? "Não fez mais que a obrigação" : "Eu não acredito q vc errou vey"}</p>}
+    <div className="quiz-feedback" aria-live="polite">{picked !== null && <>{number !== quiz.length && <p>{isCorrectAnswer(number - 1, picked) ? "Não fez mais que a obrigação" : "Eu vou ter que tar te batendo"}</p>}
       {next === "inclusive" ? <Next to="/inclusive" /> : <Next to="/quiz/$question" question={next} />}</>}</div>
   </section></Scene>;
 }
