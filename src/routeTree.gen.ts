@@ -18,6 +18,7 @@ import { Route as DuoRouteImport } from './routes/duo'
 import { Route as EscolhaRouteImport } from './routes/escolha'
 import { Route as InclusiveRouteImport } from './routes/inclusive'
 import { Route as LittleThingsRouteImport } from './routes/little-things'
+import { Route as MaisMomentosRouteImport } from './routes/mais-momentos'
 import { Route as MomentosRouteImport } from './routes/momentos'
 import { Route as MusicaRouteImport } from './routes/musica'
 import { Route as ObrigadaRouteImport } from './routes/obrigada'
@@ -68,6 +69,11 @@ const LittleThingsRoute = LittleThingsRouteImport.update({
   path: '/little-things',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MaisMomentosRoute = MaisMomentosRouteImport.update({
+  id: '/mais-momentos',
+  path: '/mais-momentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MomentosRoute = MomentosRouteImport.update({
   id: '/momentos',
   path: '/momentos',
@@ -99,6 +105,7 @@ export interface FileRoutesByFullPath {
   '/escolha': typeof EscolhaRoute
   '/inclusive': typeof InclusiveRoute
   '/little-things': typeof LittleThingsRoute
+  '/mais-momentos': typeof MaisMomentosRoute
   '/momentos': typeof MomentosRoute
   '/musica': typeof MusicaRoute
   '/obrigada': typeof ObrigadaRoute
@@ -114,6 +121,7 @@ export interface FileRoutesByTo {
   '/escolha': typeof EscolhaRoute
   '/inclusive': typeof InclusiveRoute
   '/little-things': typeof LittleThingsRoute
+  '/mais-momentos': typeof MaisMomentosRoute
   '/momentos': typeof MomentosRoute
   '/musica': typeof MusicaRoute
   '/obrigada': typeof ObrigadaRoute
@@ -130,6 +138,7 @@ export interface FileRoutesById {
   '/escolha': typeof EscolhaRoute
   '/inclusive': typeof InclusiveRoute
   '/little-things': typeof LittleThingsRoute
+  '/mais-momentos': typeof MaisMomentosRoute
   '/momentos': typeof MomentosRoute
   '/musica': typeof MusicaRoute
   '/obrigada': typeof ObrigadaRoute
@@ -147,6 +156,7 @@ export interface FileRouteTypes {
     | '/escolha'
     | '/inclusive'
     | '/little-things'
+    | '/mais-momentos'
     | '/momentos'
     | '/musica'
     | '/obrigada'
@@ -162,6 +172,7 @@ export interface FileRouteTypes {
     | '/escolha'
     | '/inclusive'
     | '/little-things'
+    | '/mais-momentos'
     | '/momentos'
     | '/musica'
     | '/obrigada'
@@ -177,6 +188,7 @@ export interface FileRouteTypes {
     | '/escolha'
     | '/inclusive'
     | '/little-things'
+    | '/mais-momentos'
     | '/momentos'
     | '/musica'
     | '/obrigada'
@@ -193,6 +205,7 @@ export interface RootRouteChildren {
   EscolhaRoute: typeof EscolhaRoute
   InclusiveRoute: typeof InclusiveRoute
   LittleThingsRoute: typeof LittleThingsRoute
+  MaisMomentosRoute: typeof MaisMomentosRoute
   MomentosRoute: typeof MomentosRoute
   MusicaRoute: typeof MusicaRoute
   ObrigadaRoute: typeof ObrigadaRoute
@@ -264,6 +277,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LittleThingsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mais-momentos': {
+      id: '/mais-momentos'
+      path: '/mais-momentos'
+      fullPath: '/mais-momentos'
+      preLoaderRoute: typeof MaisMomentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/momentos': {
       id: '/momentos'
       path: '/momentos'
@@ -305,6 +325,7 @@ const rootRouteChildren: RootRouteChildren = {
   EscolhaRoute: EscolhaRoute,
   InclusiveRoute: InclusiveRoute,
   LittleThingsRoute: LittleThingsRoute,
+  MaisMomentosRoute: MaisMomentosRoute,
   MomentosRoute: MomentosRoute,
   MusicaRoute: MusicaRoute,
   ObrigadaRoute: ObrigadaRoute,
