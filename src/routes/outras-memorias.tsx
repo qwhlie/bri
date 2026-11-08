@@ -9,6 +9,7 @@ import four from "@/assets/memories/memory-20.png.asset.json";
 import five from "@/assets/memories/memory-21.png.asset.json";
 import six from "@/assets/memories/memory-22.png.asset.json";
 import seven from "@/assets/memories/memory-23.png.asset.json";
+import background from "@/assets/backgrounds/bg-outras-memorias.png.asset.json";
 
 const photos = [one, two, three, four, five, six, seven];
 export const Route = createFileRoute("/outras-memorias")({
@@ -16,5 +17,5 @@ export const Route = createFileRoute("/outras-memorias")({
   component: OtherMemories,
 });
 function OtherMemories() {
-  return <Scene><Ornament /><h1 className="script-heading">Lembranças guardadas com carinho</h1><MemoryAlbum photos={photos} /><Next to="/little-things" /></Scene>;
+  return <Scene background={background}><Ornament /><h1 className="script-heading">Lembranças guardadas com carinho</h1><MemoryAlbum photos={photos} /><Next to="/little-things" /></Scene>;
 }

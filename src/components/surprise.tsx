@@ -22,9 +22,9 @@ export function StoryDecorations() {
   </div>;
 }
 
-export function Scene({ children, lunar = false, blurred = false, quizQuestion }: { children: ReactNode; lunar?: boolean; blurred?: boolean; quizQuestion?: number }) {
+export function Scene({ children, lunar = false, blurred = false, quizQuestion, background }: { children: ReactNode; lunar?: boolean; blurred?: boolean; quizQuestion?: number; background?: { url: string } }) {
   return <main className={`surprise-scene ${lunar ? "lunar-scene" : ""}`}>
-    <img src={lunar ? moon.url : lace.url} alt="" className={`scene-background ${blurred || !lunar ? "scene-blurred" : ""}`} />
+    <img src={background?.url ?? (lunar ? moon.url : lace.url)} alt="" className={`scene-background ${blurred || !lunar ? "scene-blurred" : ""}`} />
     {!lunar && (quizQuestion === undefined ? <StoryDecorations /> : <QuizDecorations question={quizQuestion} />)}
     {lunar && <div className="lunar-shade" />}
     <div className="scene-content">{children}</div>

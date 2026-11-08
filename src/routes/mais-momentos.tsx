@@ -9,6 +9,7 @@ import four from "@/assets/memories/memory-15.png.asset.json";
 import five from "@/assets/memories/memory-16.png.asset.json";
 import previousOne from "@/assets/moments/moment-9.png.asset.json";
 import previousTwo from "@/assets/moments/moment-10.png.asset.json";
+import background from "@/assets/backgrounds/bg-mais-momentos.png.asset.json";
 
 const photos = [previousOne, previousTwo, one, two, three, four, five];
 export const Route = createFileRoute("/mais-momentos")({
@@ -16,5 +17,5 @@ export const Route = createFileRoute("/mais-momentos")({
   component: MoreMoments,
 });
 function MoreMoments() {
-  return <Scene><Ornament /><h1 className="script-heading">Mais dos nossos momentinhos</h1><MemoryAlbum photos={photos} /><Next to="/outras-memorias" /></Scene>;
+  return <Scene background={background}><Ornament /><h1 className="script-heading">Mais dos nossos momentinhos</h1><MemoryAlbum photos={photos} /><Next to="/outras-memorias" /></Scene>;
 }
