@@ -344,6 +344,38 @@
 @media (max-width: 900px) { .collage-art { opacity: .42; } .collage-art-0, .collage-art-1 { width: 24%; } .collage-echo { width: 12%; } .collage-ducks { width: 90px; height: 90px; left: 2%; bottom: 1%; } .collage-bird { width: 64px; height: 64px; top: 1%; left: 32%; } }
 @media (max-width: 600px) { .collage-art-0 { width: 24%; height: 30%; } .collage-art-1 { width: 25%; height: 25%; } .collage-art-2 { width: 38%; height: 14%; } .collage-art-3 { width: 40%; height: 16%; } .collage-1 .collage-art-0, .collage-3 .collage-art-0 { height: 42%; } .collage-star { font-size: 36px; } }
 @keyframes heart-float { 50% { transform: translateY(-15px) scale(1.05); } }
+.surprise-scene:has(.clarks-chapter) { align-items: flex-start; padding-top: 38px; padding-bottom: 64px; }
+.surprise-scene:has(.clarks-chapter) .scene-content { width: min(100%, 860px); }
+.clarks-chapter { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 28px; position: relative; z-index: 1; }
+.clarks-heading { font-size: 88px; font-weight: 400; line-height: 1.2; text-align: center; text-wrap: balance; text-shadow: var(--scene-shadow); }
+.clarks-polaroid { width: min(100%, 520px); padding: 16px 16px 8px; background: var(--letter-paper); color: var(--storybook-blue); box-shadow: var(--envelope-shadow); transform: rotate(-3deg); }
+.clarks-polaroid img { display: block; width: 100%; max-height: 460px; object-fit: contain; }
+.clarks-polaroid figcaption { font-size: 30px; text-align: center; line-height: 1.5; }
+.clarks-first { animation: clarks-reveal 1.8s 1.5s ease both; }
+.clarks-second { transform: rotate(3deg); animation: clarks-swap .7s ease both; }
+.clarks-next { animation: clarks-reveal .8s 2.8s ease both; }
+.clarks-next-ready { animation: none; }
+.clarks-rain { position: absolute; inset: -40px -24px; pointer-events: none; overflow: hidden; }
+.clarks-rain span { position: absolute; top: -100px; left: 4%; font-size: 56px; color: var(--moon-ink); opacity: 0; animation: clarks-fall 3.8s ease-in both; }
+.clarks-rain span:nth-child(6n + 2) { left: 22%; animation-delay: .35s; font-size: 38px; }
+.clarks-rain span:nth-child(6n + 3) { left: 40%; animation-delay: .8s; }
+.clarks-rain span:nth-child(6n + 4) { left: 58%; animation-delay: .2s; font-size: 44px; }
+.clarks-rain span:nth-child(6n + 5) { left: 76%; animation-delay: .6s; }
+.clarks-rain span:nth-child(6n) { left: 94%; animation-delay: 1s; font-size: 40px; }
+.clarks-rain span:nth-child(n + 7) { top: -260px; margin-left: 3%; }
+.clarks-rain span:nth-child(n + 13) { top: -420px; margin-left: -3%; animation-duration: 4.4s; }
+.clarks-rain span:nth-child(n + 19) { top: -580px; animation-duration: 4.8s; }
+@keyframes clarks-fall { 10% { opacity: .85; } 80% { opacity: .55; } to { transform: translateY(1100px) rotate(35deg); opacity: 0; } }
+@keyframes clarks-reveal { from { opacity: 0; filter: blur(8px); translate: 0 28px; } to { opacity: 1; filter: blur(0); translate: 0 0; } }
+@keyframes clarks-swap { from { opacity: 0; translate: 30px 0; } to { opacity: 1; translate: 0 0; } }
+@media (max-width: 600px) {
+  .clarks-heading { font-size: 54px; }
+  .clarks-chapter { gap: 28px; }
+  .clarks-polaroid { width: min(92%, 420px); padding: 10px 10px 6px; }
+  .clarks-polaroid img { max-height: 390px; }
+  .surprise-scene:has(.clarks-chapter) + .soundtrack { position: relative; right: auto; bottom: auto; margin: 14px 14px 14px auto; width: 224px; }
+}
+@media (prefers-reduced-motion: reduce) { .clarks-rain { display: none; } }
 @keyframes scene-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 600px) { .script-heading { font-size: 48px; } .quiz-heading { font-size: 38px; } .quiz-option { font-size: 25px; } .surprise-scene { padding: 40px 20px; } .record { width: 230px; height: 230px; } .photo-grid { gap: 10px; } .horror-heading { font-size: 56px; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
