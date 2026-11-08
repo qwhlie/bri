@@ -25,4 +25,4 @@
 - [x] Colocar as dez fotos em polaroids empilhadas e verificar navegação ampliada no computador e celular.
 - [x] Adicionar segunda página de memórias com as nove imagens selecionadas e verificar a sequência e as setas.
 - [x] Redistribuir as 22 fotos em três páginas e verificar as três novas imagens.
-- [ ] Substituir animação temporária após Inclusive pelas duas polaroids com chuva de interrogações e verificar a sequência.
+- [x] Substituir animação temporária após Inclusive pelas duas polaroids com chuva de interrogações e verificar a sequência.
