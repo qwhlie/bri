@@ -24,4 +24,4 @@
 - [x] Animar brilhos finais e verificar no computador e celular.
 - [x] Colocar as dez fotos em polaroids empilhadas e verificar navegação ampliada no computador e celular.
 - [x] Adicionar segunda página de memórias com as nove imagens selecionadas e verificar a sequência e as setas.
-- [ ] Redistribuir as 22 fotos em três páginas e verificar as três novas imagens.
+- [x] Redistribuir as 22 fotos em três páginas e verificar as três novas imagens.
