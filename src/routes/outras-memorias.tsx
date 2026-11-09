@@ -13,9 +13,9 @@ import background from "@/assets/backgrounds/bg-outras-memorias.png.asset.json";
 
 const photos = [one, two, three, four, five, six, seven];
 export const Route = createFileRoute("/outras-memorias")({
-  head: () => surpriseHead("Lembranças guardadas — Belle e Bri", "Mais memórias de Belle e Bri guardadas com carinho."),
+  head: () => surpriseHead("E mais um pouco deles — Belle e Bri", "Mais memórias de Belle e Bri guardadas com carinho."),
   component: OtherMemories,
 });
 function OtherMemories() {
-  return <Scene background={background}><Ornament /><h1 className="script-heading">Lembranças guardadas com carinho</h1><MemoryAlbum photos={photos} /><Next to="/little-things" /></Scene>;
+  return <Scene background={background}><Ornament /><h1 className="script-heading">E mais um pouco deles</h1><MemoryAlbum photos={photos} /><Next to="/little-things" /></Scene>;
 }
