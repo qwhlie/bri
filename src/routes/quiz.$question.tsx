@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ArrowRight, Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Scene, Next, Ornament } from "@/components/surprise";
-import { quiz, isCorrectAnswer, nextQuizStep, canContinuePhrase, isCorrectPhrase } from "@/lib/quiz";
+import { quiz, isCorrectAnswer, nextQuizStep, canContinuePhrase, isCorrectTyped } from "@/lib/quiz";
 import { surpriseHead } from "@/lib/surprise-head";
 
 export const Route = createFileRoute("/quiz/$question")({
