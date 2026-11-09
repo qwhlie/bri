@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ArrowRight, Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Scene, Next, Ornament } from "@/components/surprise";
-import { quiz, isCorrectAnswer, nextQuizStep, canContinuePhrase, isCorrectPhrase } from "@/lib/quiz";
+import { quiz, isCorrectAnswer, nextQuizStep, canContinuePhrase, isCorrectTyped } from "@/lib/quiz";
 import { surpriseHead } from "@/lib/surprise-head";
 
 export const Route = createFileRoute("/quiz/$question")({
@@ -26,21 +26,24 @@ function Question({ number }: { number: number }) {
   const navigate = useNavigate();
   const item = quiz[number - 1];
   if (!item) return null;
-  if (number === quiz.length) return <Scene quizQuestion={number}><section className="quiz-content">
+  const next = nextQuizStep(number);
+  const goNext = () => next === "inclusive" ? navigate({ to: "/inclusive" }) : navigate({ to: "/quiz/$question", params: { question: next } });
+  const nextButton = next === "inclusive" ? <Next to="/inclusive" /> : <Next to="/quiz/$question" question={next} />;
+  if (item.typed) return <Scene quizQuestion={number}><section className="quiz-content">
     <Ornament />
+    <p className="question-number">{String(number).padStart(2, "0")} / {quiz.length}</p>
     <h1 className="quiz-heading">{item.question}</h1>
     <form className="phrase-form" onSubmit={event => {
       event.preventDefault();
       if (!canContinuePhrase(phrase, phraseWrong)) return;
-      if (isCorrectPhrase(phrase)) void navigate({ to: "/inclusive" });
+      if (isCorrectTyped(phrase, item.answer ?? "")) void goNext();
       else setPhraseWrong(true);
     }}>
-      <input className="phrase-input" aria-label="Complete a frase" readOnly={phraseWrong} aria-invalid={phraseWrong} aria-describedby={phraseWrong ? "phrase-error" : undefined} placeholder="…" value={phrase} onChange={event => { if (!phraseWrong) setPhrase(event.target.value); }} autoComplete="off" />
+      <input className="phrase-input" aria-label="Digite sua resposta" readOnly={phraseWrong} aria-invalid={phraseWrong} aria-describedby={phraseWrong ? "phrase-error" : undefined} placeholder="…" value={phrase} onChange={event => { if (!phraseWrong) setPhrase(event.target.value); }} autoComplete="off" />
       {!phraseWrong && <Button type="submit" className="continue-button" size="lg" disabled={!canContinuePhrase(phrase)}>Continuar<ArrowRight aria-hidden="true" /></Button>}
     </form>
-    <div className="quiz-feedback" aria-live="polite">{phraseWrong && <><X aria-label="Resposta incorreta" /><p id="phrase-error">Vc errou Bri, era bruxinha</p><Next to="/inclusive" /></>}</div>
+    <div className="quiz-feedback" aria-live="polite">{phraseWrong && <><X aria-label="Resposta incorreta" /><p id="phrase-error">{item.wrongMessage}</p>{nextButton}</>}</div>
   </section></Scene>;
-  const next = nextQuizStep(number);
   return <Scene quizQuestion={number}><section className="quiz-content">
     <Ornament /><p className="question-number">{String(number).padStart(2, "0")} / {quiz.length}</p>
     <h1 className="quiz-heading">{item.question}</h1>
@@ -52,6 +55,6 @@ function Question({ number }: { number: number }) {
       </Button>;
     })}</div>
     <div className="quiz-feedback" aria-live="polite">{picked !== null && <>{number !== quiz.length && <p>{isCorrectAnswer(number - 1, picked) ? "Não fez mais que a obrigação" : "Eu vou ter que tar te batendo"}</p>}
-      {next === "inclusive" ? <Next to="/inclusive" /> : <Next to="/quiz/$question" question={next} />}</>}</div>
+      {nextButton}</>}</div>
   </section></Scene>;
 }
