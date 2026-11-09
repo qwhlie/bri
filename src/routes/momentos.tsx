@@ -14,5 +14,5 @@ import background from "@/assets/backgrounds/bg-momentos.png.asset.json";
 const photos = [one, two, three, four, five, six, seven, eight];
 export const Route = createFileRoute("/momentos")({ head: () => surpriseHead("Nossos momentinhos", "Só para vc não esquecer de alguns momentinhos que passamos juntos."), component: Moments });
 function Moments() {
-  return <Scene background={background}><Ornament /><h1 className="script-heading">Só para vc não esquecer de alguns momentinhos que passamos juntos</h1><MemoryAlbum photos={photos} /><Next to="/mais-momentos" /></Scene>;
+  return <Scene background={background}><Ornament /><h1 className="script-heading script-heading-white">Só para vc não esquecer de alguns momentinhos que passamos juntos</h1><MemoryAlbum photos={photos} /><Next to="/mais-momentos" /></Scene>;
 }
