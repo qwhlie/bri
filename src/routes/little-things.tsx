@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
 import { Scene, Next, Ornament } from "@/components/surprise";
 import { surpriseHead } from "@/lib/surprise-head";
 import background from "@/assets/backgrounds/bg-little-things.png.asset.json";
@@ -11,14 +10,9 @@ const lines = ["Suas pequenas lembranças vêm aqui ♡"];
 const LINE_START = 3;
 const LINE_STEP = 0.5;
 const LINE_FADE = 0.9;
+const NEXT_DELAY = LINE_START + lines.length * LINE_STEP + LINE_FADE;
 
 function LittleThings() {
-  const [open, setOpen] = useState(false);
-  useEffect(() => {
-    const delay = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : (LINE_START + lines.length * LINE_STEP + LINE_FADE) * 1000;
-    const timer = window.setTimeout(() => setOpen(true), delay);
-    return () => window.clearTimeout(timer);
-  }, []);
   return <Scene background={background}>
     <Ornament />
     <h1 className="script-heading">Little things</h1>
@@ -36,7 +30,7 @@ function LittleThings() {
         <div className="scroll-rod scroll-rod-bottom" aria-hidden="true" />
       </div>
     </div>
-    {open && <Next to="/cartinha" />}
+    <div className="scroll-next" style={{ animationDelay: `${NEXT_DELAY}s` }}><Next to="/cartinha" /></div>
     <Ornament />
   </Scene>;
 }
