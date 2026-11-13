@@ -7,7 +7,7 @@ export const Route = createFileRoute("/little-things")({ head: () => surpriseHea
 
 // Conteúdo provisório: as pequenas lembranças chegam aqui quando a Julie enviar.
 const lines = ["Suas pequenas lembranças vêm aqui ♡"];
-const LINE_START = 3;
+const LINE_START = 2.6;
 const LINE_STEP = 0.5;
 const LINE_FADE = 0.9;
 const NEXT_DELAY = LINE_START + lines.length * LINE_STEP + LINE_FADE;
