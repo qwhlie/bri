@@ -26,8 +26,8 @@ function LittleThings() {
               {lines.map((line, i) => <p className="scroll-line" key={line + i} style={{ animationDelay: `${LINE_START + i * LINE_STEP}s` }}>{line}</p>)}
             </div>
           </div>
+          <div className="scroll-rod scroll-rod-bottom" aria-hidden="true" />
         </div>
-        <div className="scroll-rod scroll-rod-bottom" aria-hidden="true" />
       </div>
     </div>
     <div className="scroll-next" style={{ animationDelay: `${NEXT_DELAY}s` }}><Next to="/cartinha" /></div>
