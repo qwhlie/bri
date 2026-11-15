@@ -400,11 +400,12 @@
 .scroll-flourish span + span { background: linear-gradient(90deg, var(--storybook-blue), transparent); }
 .scroll-flourish-end { padding: 10px 44px 16px; animation-name: flourish-in-soft; }
 .scroll-next { opacity: 0; visibility: hidden; animation: scroll-next-in .8s ease forwards; }
+.surprise-scene:has(.scroll-stage) + .soundtrack { top: 14px; bottom: auto; }
 @keyframes scroll-unroll { to { max-height: 640px; } }
 @keyframes scroll-line-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes flourish-in { to { opacity: .62; } }
 @keyframes flourish-in-soft { to { opacity: .46; } }
 @keyframes scroll-next-in { 0% { opacity: 0; visibility: hidden; transform: translateY(10px); } 1% { visibility: visible; } 100% { opacity: 1; visibility: visible; transform: translateY(0); } }
 @keyframes scroll-sway { 0%, 100% { transform: rotate(-.7deg); } 50% { transform: rotate(.7deg); } }
-@media (max-width: 600px) { .scroll-list { columns: 2; column-gap: 14px; font-size: 18px; padding: 6px 18px; } .scroll-line { margin-bottom: 3px; } .scroll-body { padding-inline: 20px; } .scroll-body::after { inset: 9px 28px 15px; } .scroll-flourish { padding-inline: 22px; gap: 8px; } .scroll-flourish span { width: 34px; } .surprise-scene:has(.scroll-stage) + .soundtrack { position: relative; right: auto; bottom: auto; margin: 14px 14px 14px auto; width: 224px; } }
+@media (max-width: 600px) { .scroll-list { columns: 2; column-gap: 14px; font-size: 18px; padding: 6px 18px; } .scroll-line { margin-bottom: 3px; } .scroll-body { padding-inline: 20px; } .scroll-body::after { inset: 9px 28px 15px; } .scroll-flourish { padding-inline: 22px; gap: 8px; } .scroll-flourish span { width: 34px; } .surprise-scene:has(.scroll-stage) + .soundtrack { position: relative; top: auto; right: auto; bottom: auto; margin: 14px 14px 14px auto; width: 224px; } }
 @media (prefers-reduced-motion: reduce) { .scroll-body { max-height: 640px; } .scroll-line { opacity: 1; } .scroll-flourish { opacity: .6; } .scroll-flourish-end { opacity: .46; } .scroll-next { opacity: 1; visibility: visible; } .scroll-scroll { animation: none; } }
