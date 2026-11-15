@@ -382,22 +382,28 @@
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 
 /* Little things: um pergaminho que se desenrola */
-.scroll-stage { width: min(100%, 560px); display: flex; justify-content: center; }
-.scroll-scroll { position: relative; width: 100%; display: flex; flex-direction: column; transform-origin: top center; animation: scroll-sway 8s 4.8s ease-in-out infinite; }
-.scroll-rod { position: relative; z-index: 3; height: 16px; border-radius: 999px; background: linear-gradient(180deg, oklch(0.69 0.055 68), var(--storybook-brown) 55%, oklch(0.31 0.05 62)); box-shadow: var(--scene-shadow); }
-.scroll-rod::before, .scroll-rod::after { content: ""; position: absolute; top: 50%; width: 22px; height: 22px; margin-top: -11px; border-radius: 50%; background: radial-gradient(circle at 34% 28%, oklch(0.83 0.05 235), var(--storybook-blue) 58%, oklch(0.35 0.07 240)); box-shadow: var(--scene-shadow); }
-.scroll-rod::before { left: 1px; }
-.scroll-rod::after { right: 1px; }
+.scroll-stage { width: min(100%, 600px); display: flex; justify-content: center; }
+.scroll-scroll { position: relative; width: 100%; display: flex; flex-direction: column; transform-origin: top center; animation: scroll-sway 9s 6.4s ease-in-out infinite; }
+.scroll-rod { position: relative; z-index: 3; height: 8px; border-radius: 999px; background: linear-gradient(180deg, oklch(0.74 0.045 72), var(--storybook-brown) 55%, oklch(0.36 0.05 62)); box-shadow: 0 3px 10px oklch(0.2 0.03 240 / 22%), inset 0 1px 0 oklch(0.92 0.035 82 / 50%); }
+.scroll-rod::before, .scroll-rod::after { content: ""; position: absolute; top: 50%; width: 13px; height: 15px; margin-top: -7.5px; border-radius: 50% / 42% 42% 58% 58%; background: radial-gradient(circle at 35% 26%, oklch(0.92 0.025 235), var(--envelope-blue) 42%, var(--storybook-blue) 72%, oklch(0.38 0.07 240)); box-shadow: 0 2px 6px oklch(0.2 0.03 240 / 28%), inset 0 -2px 3px oklch(0.28 0.05 240 / 40%); }
+.scroll-rod::before { left: -7px; }
+.scroll-rod::after { right: -7px; }
 .scroll-body { position: relative; width: 100%; padding-inline: 30px; max-height: 0; overflow: hidden; animation: scroll-unroll 3.2s .45s cubic-bezier(.22, .61, .36, 1) forwards; }
-.scroll-rod-bottom { position: absolute; left: 0; right: 0; bottom: 0; box-shadow: var(--scene-shadow), 0 -14px 18px -10px oklch(0.2 0.03 240 / 32%); }
-.scroll-paper { position: relative; max-height: min(600px, 56svh); overflow: auto; background: linear-gradient(180deg, oklch(0.93 0.01 95), var(--letter-paper) 14%, var(--letter-paper) 86%, oklch(0.92 0.012 95)); color: var(--primary); border-inline: 1px solid var(--envelope-fold); scrollbar-width: thin; scrollbar-color: var(--storybook-blue) transparent; }
-.scroll-paper::before { content: ""; position: absolute; inset: 12px 16px; border: 1px solid var(--storybook-blue); opacity: .35; pointer-events: none; }
-.scroll-message { display: flex; flex-direction: column; justify-content: center; gap: 18px; min-height: 280px; padding: 52px 40px; text-align: center; font-size: 30px; line-height: 1.55; overflow-wrap: anywhere; }
-.scroll-line { opacity: 0; animation: scroll-line-in .9s ease forwards; }
+.scroll-body::after { content: ""; position: absolute; inset: 9px 39px 15px; border: 1px solid oklch(0.54 0.065 240 / .3); border-radius: 3px; pointer-events: none; background-image: radial-gradient(circle, oklch(0.5 0.07 240 / .5) 1.6px, transparent 2.3px), radial-gradient(circle, oklch(0.5 0.07 240 / .5) 1.6px, transparent 2.3px), radial-gradient(circle, oklch(0.5 0.07 240 / .5) 1.6px, transparent 2.3px), radial-gradient(circle, oklch(0.5 0.07 240 / .5) 1.6px, transparent 2.3px); background-size: 9px 9px; background-position: left top, right top, left bottom, right bottom; background-repeat: no-repeat; }
+.scroll-rod-bottom { position: absolute; left: 0; right: 0; bottom: 0; box-shadow: 0 3px 10px oklch(0.2 0.03 240 / 22%), 0 -12px 16px -10px oklch(0.2 0.03 240 / 26%); }
+.scroll-paper { position: relative; max-height: min(560px, 52svh); overflow: auto; color: var(--primary); border-radius: 3px; box-shadow: inset 0 0 34px oklch(0.6 0.035 80 / 13%), var(--envelope-shadow); background: linear-gradient(180deg, oklch(0.56 0.04 80 / 15%), transparent 7%, transparent 93%, oklch(0.56 0.04 80 / 12%)), repeating-linear-gradient(91deg, oklch(0.7 0.02 88 / 4%) 0 1px, transparent 1px 6px), repeating-linear-gradient(0deg, oklch(0.7 0.02 88 / 3%) 0 1px, transparent 1px 9px), linear-gradient(180deg, oklch(0.968 0.008 92), var(--letter-paper) 10%, var(--letter-paper) 90%, oklch(0.948 0.012 92)); scrollbar-width: thin; scrollbar-color: var(--envelope-fold) transparent; }
+.scroll-list { columns: 2; column-gap: 24px; column-rule: 1px dashed oklch(0.54 0.065 240 / .28); padding: 8px 36px; text-align: center; font-size: 24px; line-height: 1.45; overflow-wrap: anywhere; }
+.scroll-line { opacity: 0; margin: 0 0 6px; break-inside: avoid; animation: scroll-line-in .8s ease forwards; }
+.scroll-flourish { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--storybook-blue); opacity: 0; animation: flourish-in 1s ease forwards; padding: 20px 44px 0; }
+.scroll-flourish span { height: 1px; width: 54px; background: linear-gradient(90deg, transparent, var(--storybook-blue)); }
+.scroll-flourish span + span { background: linear-gradient(90deg, var(--storybook-blue), transparent); }
+.scroll-flourish-end { padding: 12px 44px 20px; animation-name: flourish-in-soft; }
 .scroll-next { opacity: 0; visibility: hidden; animation: scroll-next-in .8s ease forwards; }
 @keyframes scroll-unroll { to { max-height: 640px; } }
-@keyframes scroll-line-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scroll-line-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes flourish-in { to { opacity: .62; } }
+@keyframes flourish-in-soft { to { opacity: .46; } }
 @keyframes scroll-next-in { 0% { opacity: 0; visibility: hidden; transform: translateY(10px); } 1% { visibility: visible; } 100% { opacity: 1; visibility: visible; transform: translateY(0); } }
 @keyframes scroll-sway { 0%, 100% { transform: rotate(-.7deg); } 50% { transform: rotate(.7deg); } }
-@media (max-width: 600px) { .scroll-message { padding: 40px 22px; font-size: 26px; min-height: 240px; } .scroll-body { padding-inline: 22px; } .surprise-scene:has(.scroll-stage) + .soundtrack { position: relative; right: auto; bottom: auto; margin: 14px 14px 14px auto; width: 224px; } }
-@media (prefers-reduced-motion: reduce) { .scroll-body { max-height: 640px; } .scroll-line { opacity: 1; } .scroll-next { opacity: 1; visibility: visible; } .scroll-scroll { animation: none; } }
+@media (max-width: 600px) { .scroll-list { columns: 1; font-size: 22px; padding: 6px 24px; } .scroll-body { padding-inline: 22px; } .scroll-body::after { inset: 9px 30px 15px; } .scroll-flourish { padding-inline: 26px; } .surprise-scene:has(.scroll-stage) + .soundtrack { position: relative; right: auto; bottom: auto; margin: 14px 14px 14px auto; width: 224px; } }
+@media (prefers-reduced-motion: reduce) { .scroll-body { max-height: 640px; } .scroll-line { opacity: 1; } .scroll-flourish { opacity: .6; } .scroll-flourish-end { opacity: .46; } .scroll-next { opacity: 1; visibility: visible; } .scroll-scroll { animation: none; } }
