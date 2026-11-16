@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Heart } from "lucide-react";
+import { Flower2 } from "lucide-react";
 import { Scene, Next, Ornament } from "@/components/surprise";
 import { surpriseHead } from "@/lib/surprise-head";
 import background from "@/assets/backgrounds/bg-little-things.png.asset.json";
@@ -13,7 +13,7 @@ const lines = [
   "Brioche",
   "Evento Halloween Roblox",
   "Jogo de luta",
-  "Fish",
+  "Fisch",
   "Gakuran",
   "Guns",
   "Trocar de perfil td hora no Discord",
@@ -44,11 +44,11 @@ function LittleThings() {
         <div className="scroll-rod scroll-rod-top" aria-hidden="true" />
         <div className="scroll-body">
           <div className="scroll-paper">
-            <div className="scroll-flourish" aria-hidden="true"><span /><Heart size={15} strokeWidth={1.1} /><span /></div>
+            <div className="scroll-flourish" aria-hidden="true"><span /><Flower2 size={23} strokeWidth={1} /><span /></div>
             <div className="scroll-list">
               {lines.map((line, i) => <p className="scroll-line" key={line} style={{ animationDelay: `${LINE_START + i * LINE_STEP}s` }}>{line}</p>)}
             </div>
-            <div className="scroll-flourish scroll-flourish-end" aria-hidden="true"><span /><Heart size={12} strokeWidth={1.1} /><span /></div>
+            <div className="scroll-flourish scroll-flourish-end" aria-hidden="true"><span /><Flower2 size={20} strokeWidth={1} /><span /></div>
           </div>
           <div className="scroll-rod scroll-rod-bottom" aria-hidden="true" />
         </div>
