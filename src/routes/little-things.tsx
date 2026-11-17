@@ -27,6 +27,8 @@ const lines = [
   "Pereira",
   "Kenga",
   "Paneleiro",
+  "Baco",
+  "Apocalipse Zumbi",
 ];
 
 const LINE_START = 1.7;
