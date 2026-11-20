@@ -28,3 +28,4 @@
 - [x] Substituir animação temporária após Inclusive pelas duas polaroids com chuva de interrogações e verificar a sequência.
 - [x] Redesenhar o pergaminho em uma coluna, corrigir Fisch e verificar no computador e celular.
 - [x] Colocar página de zoação antes da primeira pergunta do quiz e verificar a sequência.
+- [x] Criar página Gogo Boys após as três páginas de memórias, com quatro polaroids e a conversa de Belle e Bri; verificar sequência e navegação.

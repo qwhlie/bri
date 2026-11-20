@@ -17,5 +17,5 @@ export const Route = createFileRoute("/outras-memorias")({
   component: OtherMemories,
 });
 function OtherMemories() {
-  return <Scene background={background}><Ornament /><h1 className="script-heading">E mais um pouco deles</h1><MemoryAlbum photos={photos} /><Next to="/little-things" /></Scene>;
+  return <Scene background={background}><Ornament /><h1 className="script-heading">E mais um pouco deles</h1><MemoryAlbum photos={photos} /><Next to="/gogo-boys" /></Scene>;
 }

@@ -16,6 +16,7 @@ import { Route as CartinhaRouteImport } from './routes/cartinha'
 import { Route as DoMalRouteImport } from './routes/do-mal'
 import { Route as DuoRouteImport } from './routes/duo'
 import { Route as EscolhaRouteImport } from './routes/escolha'
+import { Route as GogoBoysRouteImport } from './routes/gogo-boys'
 import { Route as InclusiveRouteImport } from './routes/inclusive'
 import { Route as LittleThingsRouteImport } from './routes/little-things'
 import { Route as MaisMomentosRouteImport } from './routes/mais-momentos'
@@ -59,6 +60,11 @@ const DuoRoute = DuoRouteImport.update({
 const EscolhaRoute = EscolhaRouteImport.update({
   id: '/escolha',
   path: '/escolha',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GogoBoysRoute = GogoBoysRouteImport.update({
+  id: '/gogo-boys',
+  path: '/gogo-boys',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InclusiveRoute = InclusiveRouteImport.update({
@@ -115,6 +121,7 @@ export interface FileRoutesByFullPath {
   '/do-mal': typeof DoMalRoute
   '/duo': typeof DuoRoute
   '/escolha': typeof EscolhaRoute
+  '/gogo-boys': typeof GogoBoysRoute
   '/inclusive': typeof InclusiveRoute
   '/little-things': typeof LittleThingsRoute
   '/mais-momentos': typeof MaisMomentosRoute
@@ -133,6 +140,7 @@ export interface FileRoutesByTo {
   '/do-mal': typeof DoMalRoute
   '/duo': typeof DuoRoute
   '/escolha': typeof EscolhaRoute
+  '/gogo-boys': typeof GogoBoysRoute
   '/inclusive': typeof InclusiveRoute
   '/little-things': typeof LittleThingsRoute
   '/mais-momentos': typeof MaisMomentosRoute
@@ -152,6 +160,7 @@ export interface FileRoutesById {
   '/do-mal': typeof DoMalRoute
   '/duo': typeof DuoRoute
   '/escolha': typeof EscolhaRoute
+  '/gogo-boys': typeof GogoBoysRoute
   '/inclusive': typeof InclusiveRoute
   '/little-things': typeof LittleThingsRoute
   '/mais-momentos': typeof MaisMomentosRoute
@@ -172,6 +181,7 @@ export interface FileRouteTypes {
     | '/do-mal'
     | '/duo'
     | '/escolha'
+    | '/gogo-boys'
     | '/inclusive'
     | '/little-things'
     | '/mais-momentos'
@@ -190,6 +200,7 @@ export interface FileRouteTypes {
     | '/do-mal'
     | '/duo'
     | '/escolha'
+    | '/gogo-boys'
     | '/inclusive'
     | '/little-things'
     | '/mais-momentos'
@@ -208,6 +219,7 @@ export interface FileRouteTypes {
     | '/do-mal'
     | '/duo'
     | '/escolha'
+    | '/gogo-boys'
     | '/inclusive'
     | '/little-things'
     | '/mais-momentos'
@@ -227,6 +239,7 @@ export interface RootRouteChildren {
   DoMalRoute: typeof DoMalRoute
   DuoRoute: typeof DuoRoute
   EscolhaRoute: typeof EscolhaRoute
+  GogoBoysRoute: typeof GogoBoysRoute
   InclusiveRoute: typeof InclusiveRoute
   LittleThingsRoute: typeof LittleThingsRoute
   MaisMomentosRoute: typeof MaisMomentosRoute
@@ -287,6 +300,13 @@ declare module '@tanstack/react-router' {
       path: '/escolha'
       fullPath: '/escolha'
       preLoaderRoute: typeof EscolhaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gogo-boys': {
+      id: '/gogo-boys'
+      path: '/gogo-boys'
+      fullPath: '/gogo-boys'
+      preLoaderRoute: typeof GogoBoysRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/inclusive': {
@@ -363,6 +383,7 @@ const rootRouteChildren: RootRouteChildren = {
   DoMalRoute: DoMalRoute,
   DuoRoute: DuoRoute,
   EscolhaRoute: EscolhaRoute,
+  GogoBoysRoute: GogoBoysRoute,
   InclusiveRoute: InclusiveRoute,
   LittleThingsRoute: LittleThingsRoute,
   MaisMomentosRoute: MaisMomentosRoute,

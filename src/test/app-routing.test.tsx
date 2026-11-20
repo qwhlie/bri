@@ -14,4 +14,12 @@ describe("App routing", () => {
 
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
+
+  it("matches the Gogo Boys chapter between the memories and Little Things", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    const matches = router.matchRoutes("/gogo-boys");
+
+    expect(matches.at(-1)?.routeId).toBe("/gogo-boys");
+  });
 });
