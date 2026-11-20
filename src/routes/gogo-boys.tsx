@@ -6,7 +6,7 @@ import one from "@/assets/memories/memory-30.png.asset.json";
 import two from "@/assets/memories/memory-31.png.asset.json";
 import three from "@/assets/memories/memory-32.png.asset.json";
 import four from "@/assets/memories/memory-33.png.asset.json";
-import background from "@/assets/backgrounds/bg-outras-memorias.png.asset.json";
+import background from "@/assets/backgrounds/bg-gogo-boys.png.asset.json";
 
 const photos = [one, two, three, four];
 
@@ -19,9 +19,9 @@ function GogoBoys() {
   return (
     <Scene background={background}>
       <Ornament />
-      <h1 className="script-heading gogo-boys-heading">
-        <span>belle: gogo boys, podem vir pela janela viu?</span>
-        <span className="block">bri:</span>
+      <h1 className="script-heading script-heading-white gogo-boys-heading">
+        <span>Belle: Gogo Boys, podem vir pela janela viu?</span>
+        <span className="block">Bri:</span>
       </h1>
       <MemoryAlbum photos={photos} />
       <Next to="/little-things" />
