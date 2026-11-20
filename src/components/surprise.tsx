@@ -31,7 +31,7 @@ export function Scene({ children, lunar = false, blurred = false, quizQuestion, 
   </main>;
 }
 
-type NextDestination = "/quiz/$question" | "/musica" | "/inclusive" | "/animacao" | "/momentos" | "/mais-momentos" | "/outras-memorias" | "/little-things" | "/cartinha" | "/carta" | "/obrigada" | "/escolha" | "/duo" | "/do-mal";
+type NextDestination = "/quiz-intro" | "/quiz/$question" | "/musica" | "/inclusive" | "/animacao" | "/momentos" | "/mais-momentos" | "/outras-memorias" | "/little-things" | "/cartinha" | "/carta" | "/obrigada" | "/escolha" | "/duo" | "/do-mal";
 export function Next({ to, question, children = "Continuar" }: { to: NextDestination; question?: string; children?: ReactNode }) {
   return <Button asChild className="continue-button" size="lg">
     {to === "/quiz/$question" ? <Link to="/quiz/$question" params={{ question: question ?? "1" }}>{children}<ArrowRight aria-hidden="true" /></Link> : <Link to={to}>{children}<ArrowRight aria-hidden="true" /></Link>}

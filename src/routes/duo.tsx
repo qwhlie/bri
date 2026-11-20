@@ -8,5 +8,5 @@ export const Route = createFileRoute("/duo")({
 });
 
 function Duo() {
-  return <Scene><Ornament /><h1 className="script-heading">Acho bom mesmo</h1><Next to="/quiz/$question" /><Ornament /></Scene>;
+  return <Scene><Ornament /><h1 className="script-heading">Acho bom mesmo</h1><Next to="/quiz-intro" /><Ornament /></Scene>;
 }

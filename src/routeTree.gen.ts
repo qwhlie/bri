@@ -23,6 +23,7 @@ import { Route as MomentosRouteImport } from './routes/momentos'
 import { Route as MusicaRouteImport } from './routes/musica'
 import { Route as ObrigadaRouteImport } from './routes/obrigada'
 import { Route as OutrasMemoriasRouteImport } from './routes/outras-memorias'
+import { Route as QuizIntroRouteImport } from './routes/quiz-intro'
 import { Route as QuizQuestionRouteImport } from './routes/quiz.$question'
 
 const IndexRoute = IndexRouteImport.update({
@@ -95,6 +96,11 @@ const OutrasMemoriasRoute = OutrasMemoriasRouteImport.update({
   path: '/outras-memorias',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuizIntroRoute = QuizIntroRouteImport.update({
+  id: '/quiz-intro',
+  path: '/quiz-intro',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const QuizQuestionRoute = QuizQuestionRouteImport.update({
   id: '/quiz/$question',
   path: '/quiz/$question',
@@ -116,6 +122,7 @@ export interface FileRoutesByFullPath {
   '/musica': typeof MusicaRoute
   '/obrigada': typeof ObrigadaRoute
   '/outras-memorias': typeof OutrasMemoriasRoute
+  '/quiz-intro': typeof QuizIntroRoute
   '/quiz/$question': typeof QuizQuestionRoute
 }
 export interface FileRoutesByTo {
@@ -133,6 +140,7 @@ export interface FileRoutesByTo {
   '/musica': typeof MusicaRoute
   '/obrigada': typeof ObrigadaRoute
   '/outras-memorias': typeof OutrasMemoriasRoute
+  '/quiz-intro': typeof QuizIntroRoute
   '/quiz/$question': typeof QuizQuestionRoute
 }
 export interface FileRoutesById {
@@ -151,6 +159,7 @@ export interface FileRoutesById {
   '/musica': typeof MusicaRoute
   '/obrigada': typeof ObrigadaRoute
   '/outras-memorias': typeof OutrasMemoriasRoute
+  '/quiz-intro': typeof QuizIntroRoute
   '/quiz/$question': typeof QuizQuestionRoute
 }
 export interface FileRouteTypes {
@@ -170,6 +179,7 @@ export interface FileRouteTypes {
     | '/musica'
     | '/obrigada'
     | '/outras-memorias'
+    | '/quiz-intro'
     | '/quiz/$question'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -187,6 +197,7 @@ export interface FileRouteTypes {
     | '/musica'
     | '/obrigada'
     | '/outras-memorias'
+    | '/quiz-intro'
     | '/quiz/$question'
   id:
     | '__root__'
@@ -204,6 +215,7 @@ export interface FileRouteTypes {
     | '/musica'
     | '/obrigada'
     | '/outras-memorias'
+    | '/quiz-intro'
     | '/quiz/$question'
   fileRoutesById: FileRoutesById
 }
@@ -222,6 +234,7 @@ export interface RootRouteChildren {
   MusicaRoute: typeof MusicaRoute
   ObrigadaRoute: typeof ObrigadaRoute
   OutrasMemoriasRoute: typeof OutrasMemoriasRoute
+  QuizIntroRoute: typeof QuizIntroRoute
   QuizQuestionRoute: typeof QuizQuestionRoute
 }
 
@@ -325,6 +338,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OutrasMemoriasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/quiz-intro': {
+      id: '/quiz-intro'
+      path: '/quiz-intro'
+      fullPath: '/quiz-intro'
+      preLoaderRoute: typeof QuizIntroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/quiz/$question': {
       id: '/quiz/$question'
       path: '/quiz/$question'
@@ -350,6 +370,7 @@ const rootRouteChildren: RootRouteChildren = {
   MusicaRoute: MusicaRoute,
   ObrigadaRoute: ObrigadaRoute,
   OutrasMemoriasRoute: OutrasMemoriasRoute,
+  QuizIntroRoute: QuizIntroRoute,
   QuizQuestionRoute: QuizQuestionRoute,
 }
 export const routeTree = rootRouteImport

@@ -27,3 +27,4 @@
 - [x] Redistribuir as 22 fotos em três páginas e verificar as três novas imagens.
 - [x] Substituir animação temporária após Inclusive pelas duas polaroids com chuva de interrogações e verificar a sequência.
 - [x] Redesenhar o pergaminho em uma coluna, corrigir Fisch e verificar no computador e celular.
+- [x] Colocar página de zoação antes da primeira pergunta do quiz e verificar a sequência.
