@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Next, Ornament } from "@/components/surprise";
 import { surpriseHead } from "@/lib/surprise-head";
+import { letterGreeting, letterParagraphs } from "@/lib/letter";
 import linen from "@/assets/letter-linen.png.asset.json";
 import bird from "@/assets/letter-bird.png";
 
@@ -17,7 +18,10 @@ function OpenLetter() {
         <img className="open-letter-bird" src={bird} alt="" />
         <header><p>de: Belle<br />para: Bri</p></header>
         <Ornament />
-        <div className="open-letter-message"><p>Sua mensagem vem aqui ♡</p></div>
+        <div className="open-letter-message">
+          <p className="open-letter-greeting">{letterGreeting}</p>
+          {letterParagraphs.map((paragraph) => <p key={paragraph.slice(0, 24)}>{paragraph}</p>)}
+        </div>
         <Ornament />
       </article>
       <Next to="/obrigada" />
