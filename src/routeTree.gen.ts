@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AnimacaoRouteImport } from './routes/animacao'
 import { Route as CartaRouteImport } from './routes/carta'
+import { Route as Carta2RouteImport } from './routes/carta-2'
 import { Route as CartinhaRouteImport } from './routes/cartinha'
 import { Route as DoMalRouteImport } from './routes/do-mal'
 import { Route as DuoRouteImport } from './routes/duo'
@@ -40,6 +41,11 @@ const AnimacaoRoute = AnimacaoRouteImport.update({
 const CartaRoute = CartaRouteImport.update({
   id: '/carta',
   path: '/carta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Carta2Route = Carta2RouteImport.update({
+  id: '/carta-2',
+  path: '/carta-2',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CartinhaRoute = CartinhaRouteImport.update({
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/animacao': typeof AnimacaoRoute
   '/carta': typeof CartaRoute
+  '/carta-2': typeof Carta2Route
   '/cartinha': typeof CartinhaRoute
   '/do-mal': typeof DoMalRoute
   '/duo': typeof DuoRoute
@@ -136,6 +143,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/animacao': typeof AnimacaoRoute
   '/carta': typeof CartaRoute
+  '/carta-2': typeof Carta2Route
   '/cartinha': typeof CartinhaRoute
   '/do-mal': typeof DoMalRoute
   '/duo': typeof DuoRoute
@@ -156,6 +164,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/animacao': typeof AnimacaoRoute
   '/carta': typeof CartaRoute
+  '/carta-2': typeof Carta2Route
   '/cartinha': typeof CartinhaRoute
   '/do-mal': typeof DoMalRoute
   '/duo': typeof DuoRoute
@@ -177,6 +186,7 @@ export interface FileRouteTypes {
     | '/'
     | '/animacao'
     | '/carta'
+    | '/carta-2'
     | '/cartinha'
     | '/do-mal'
     | '/duo'
@@ -196,6 +206,7 @@ export interface FileRouteTypes {
     | '/'
     | '/animacao'
     | '/carta'
+    | '/carta-2'
     | '/cartinha'
     | '/do-mal'
     | '/duo'
@@ -215,6 +226,7 @@ export interface FileRouteTypes {
     | '/'
     | '/animacao'
     | '/carta'
+    | '/carta-2'
     | '/cartinha'
     | '/do-mal'
     | '/duo'
@@ -235,6 +247,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AnimacaoRoute: typeof AnimacaoRoute
   CartaRoute: typeof CartaRoute
+  Carta2Route: typeof Carta2Route
   CartinhaRoute: typeof CartinhaRoute
   DoMalRoute: typeof DoMalRoute
   DuoRoute: typeof DuoRoute
@@ -272,6 +285,13 @@ declare module '@tanstack/react-router' {
       path: '/carta'
       fullPath: '/carta'
       preLoaderRoute: typeof CartaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/carta-2': {
+      id: '/carta-2'
+      path: '/carta-2'
+      fullPath: '/carta-2'
+      preLoaderRoute: typeof Carta2RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cartinha': {
@@ -379,6 +399,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnimacaoRoute: AnimacaoRoute,
   CartaRoute: CartaRoute,
+  Carta2Route: Carta2Route,
   CartinhaRoute: CartinhaRoute,
   DoMalRoute: DoMalRoute,
   DuoRoute: DuoRoute,

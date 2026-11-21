@@ -8,7 +8,7 @@ export function quizDecorationGroup(question: number) {
 export function soundtrackForPath(path: string) {
   if (path === "/do-mal") return null;
   if (path === "/musica") return { id: "Qdv3DjIOl6w", title: "EU XITO XITO MESMO APOSTADO — 86 RATO" };
-  if (path === "/cartinha" || path === "/carta") return { id: "Y_hdQXQfsNg", title: "You Are the Right One" };
+  if (path === "/cartinha" || path === "/carta" || path === "/carta-2") return { id: "Y_hdQXQfsNg", title: "You Are the Right One" };
   if (path === "/obrigada") return { id: "Y_hdQXQfsNg", title: "You Are the Right One" };
   return { id: "2NAlWaC1v44", title: "Combo da Sorte" };
 }

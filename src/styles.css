@@ -301,6 +301,9 @@
 .open-letter-message p + p { margin-top: 20px; }
 .open-letter-greeting { font-family: "Great Vibes", cursive; font-size: 46px; line-height: 1.2; margin-bottom: 22px; color: var(--storybook-blue); }
 @media (max-width: 600px) { .open-letter-scene { padding: 28px 18px 36px; } .open-letter-sheet { min-height: 500px; padding: 42px 28px; } .open-letter-bird { width: 72px; height: 72px; right: 18px; } .open-letter-sheet header { font-size: 28px; } .open-letter-message { font-size: 22px; } .open-letter-greeting { font-size: 34px; } .open-letter-scene + .soundtrack { position: relative; right: auto; bottom: auto; margin: 14px 14px 14px auto; width: 224px; } }
+.open-letter-closing .open-letter-message { margin-top: 78px; }
+.open-letter-closing { padding-bottom: 72px; }
+@media (max-width: 600px) { .open-letter-closing .open-letter-message { margin-top: 58px; } .open-letter-closing { padding-bottom: 54px; } }
 .moon-finale { position: relative; min-height: 100svh; overflow: hidden; display: flex; justify-content: center; background: var(--night); }
 .finale-sky { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 35% center; }
 .finale-shimmer { pointer-events: none; filter: brightness(2) contrast(1.5); mix-blend-mode: screen; opacity: .08; mask-image: radial-gradient(ellipse at center, transparent 35%, var(--moon-ink) 85%); animation: sky-twinkle 4.5s ease-in-out infinite; }

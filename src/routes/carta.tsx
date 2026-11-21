@@ -24,7 +24,7 @@ function OpenLetter() {
         </div>
         <Ornament />
       </article>
-      <Next to="/obrigada" />
+      <Next to="/carta-2" />
     </div>
   </main>;
 }

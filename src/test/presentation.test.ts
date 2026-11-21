@@ -11,6 +11,7 @@ describe("chapter presentation rules", () => {
   it("uses the supplied Xito video for the music chapter", () => expect(soundtrackForPath("/musica")?.id).toBe("Qdv3DjIOl6w"));
   it("switches to the supplied You Are the Right One video on the letter", () => expect(soundtrackForPath("/cartinha")?.id).toBe("Y_hdQXQfsNg"));
   it("keeps You Are the Right One on the letter outside its envelope", () => expect(soundtrackForPath("/carta")?.id).toBe("Y_hdQXQfsNg"));
+  it("keeps You Are the Right One on the second letter page", () => expect(soundtrackForPath("/carta-2")?.id).toBe("Y_hdQXQfsNg"));
   it("keeps You Are the Right One on the final page", () => expect(soundtrackForPath("/obrigada")?.id).toBe("Y_hdQXQfsNg"));
   it("accelerates the moon frames from the previous 2200ms", () => expect(MOON_FRAME_MS).toBeLessThan(2200));
   it("requests automatic playback", () => expect(new URL(youtubeEmbedUrl("ORXurYriT8Q")).searchParams.get("autoplay")).toBe("1"));

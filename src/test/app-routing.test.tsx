@@ -22,4 +22,12 @@ describe("App routing", () => {
 
     expect(matches.at(-1)?.routeId).toBe("/gogo-boys");
   });
+
+  it("matches the second letter page after the open letter", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    const matches = router.matchRoutes("/carta-2");
+
+    expect(matches.at(-1)?.routeId).toBe("/carta-2");
+  });
 });

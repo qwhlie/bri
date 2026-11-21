@@ -29,3 +29,4 @@
 - [x] Redesenhar o pergaminho em uma coluna, corrigir Fisch e verificar no computador e celular.
 - [x] Colocar página de zoação antes da primeira pergunta do quiz e verificar a sequência.
 - [x] Criar página Gogo Boys após as três páginas de memórias, com quatro polaroids e a conversa de Belle e Bri; verificar sequência e navegação.
+- [x] Criar segunda página da carta com o restinho da mensagem e verificar a sequência até a tela final.
