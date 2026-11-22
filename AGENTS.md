@@ -18,3 +18,4 @@
 - Mount one route-aware visible YouTube player in the shared root, request autoplay with a manual playback fallback, and exclude horror, so recordings never overlap chapter audio and browser restrictions remain respected.
 - Keep memory chapters on separate leaf routes sharing `MemoryAlbum`, with uploaded photos as CDN pointers and an accessible modal with cyclic navigation, so presentation stays consistent and keyboard focus remains contained.
 - Serve the surprise at the domain root using the default Lovable deployment configuration; redirect the legacy /bri entry to / so static hosting settings cannot bypass the opening animation.
+- Preload chapter imagery client-side from the shared root with bounded low-priority requests and retained decoded images, so navigation is faster without blocking the opening or loading music outside its chapter.

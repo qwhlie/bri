@@ -13,6 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Soundtrack } from "@/components/soundtrack";
+import { usePreloadImages } from "@/hooks/use-preload-images";
 
 function NotFoundComponent() {
   return (
@@ -129,6 +130,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  usePreloadImages();
 
   return (
     <QueryClientProvider client={queryClient}>
