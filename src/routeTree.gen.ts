@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AnimacaoRouteImport } from './routes/animacao'
+import { Route as BriRouteImport } from './routes/bri'
 import { Route as CartaRouteImport } from './routes/carta'
 import { Route as Carta2RouteImport } from './routes/carta-2'
 import { Route as CartinhaRouteImport } from './routes/cartinha'
@@ -36,6 +37,11 @@ const IndexRoute = IndexRouteImport.update({
 const AnimacaoRoute = AnimacaoRouteImport.update({
   id: '/animacao',
   path: '/animacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BriRoute = BriRouteImport.update({
+  id: '/bri',
+  path: '/bri',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CartaRoute = CartaRouteImport.update({
@@ -122,6 +128,7 @@ const QuizQuestionRoute = QuizQuestionRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/animacao': typeof AnimacaoRoute
+  '/bri': typeof BriRoute
   '/carta': typeof CartaRoute
   '/carta-2': typeof Carta2Route
   '/cartinha': typeof CartinhaRoute
@@ -142,6 +149,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/animacao': typeof AnimacaoRoute
+  '/bri': typeof BriRoute
   '/carta': typeof CartaRoute
   '/carta-2': typeof Carta2Route
   '/cartinha': typeof CartinhaRoute
@@ -163,6 +171,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/animacao': typeof AnimacaoRoute
+  '/bri': typeof BriRoute
   '/carta': typeof CartaRoute
   '/carta-2': typeof Carta2Route
   '/cartinha': typeof CartinhaRoute
@@ -185,6 +194,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/animacao'
+    | '/bri'
     | '/carta'
     | '/carta-2'
     | '/cartinha'
@@ -205,6 +215,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/animacao'
+    | '/bri'
     | '/carta'
     | '/carta-2'
     | '/cartinha'
@@ -225,6 +236,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/animacao'
+    | '/bri'
     | '/carta'
     | '/carta-2'
     | '/cartinha'
@@ -246,6 +258,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AnimacaoRoute: typeof AnimacaoRoute
+  BriRoute: typeof BriRoute
   CartaRoute: typeof CartaRoute
   Carta2Route: typeof Carta2Route
   CartinhaRoute: typeof CartinhaRoute
@@ -278,6 +291,13 @@ declare module '@tanstack/react-router' {
       path: '/animacao'
       fullPath: '/animacao'
       preLoaderRoute: typeof AnimacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bri': {
+      id: '/bri'
+      path: '/bri'
+      fullPath: '/bri'
+      preLoaderRoute: typeof BriRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/carta': {
@@ -398,6 +418,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnimacaoRoute: AnimacaoRoute,
+  BriRoute: BriRoute,
   CartaRoute: CartaRoute,
   Carta2Route: Carta2Route,
   CartinhaRoute: CartinhaRoute,

@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { StoryDecorations } from "@/components/surprise";
+import { surpriseHead } from "@/lib/surprise-head";
 
 const mods = import.meta.glob("@/assets/intro/frame*.png.asset.json", {
   eager: true,
@@ -19,15 +20,7 @@ const frames = Object.entries(mods)
 const FRAME_MS = 180;
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Uma surpresinha pra você" },
-      {
-        name: "description",
-        content: "Alguém preparou uma surpresinha pra você.",
-      },
-    ],
-  }),
+  head: () => surpriseHead("Uma surpresa para Bri", "Alguém preparou uma surpresinha pra você."),
   component: Index,
 });
 
@@ -42,6 +35,7 @@ function Index() {
     }
 
     let n = 0;
+    const fallback = setTimeout(() => setLoaded(true), 8000);
     frames.forEach((src) => {
       const img = new Image();
       img.onload = img.onerror = () => {
@@ -50,6 +44,7 @@ function Index() {
       };
       img.src = src;
     });
+    return () => clearTimeout(fallback);
   }, []);
 
   useEffect(() => {
@@ -61,7 +56,7 @@ function Index() {
   const done = loaded && (frames.length === 0 || i === frames.length - 1);
 
   return (
-    <main className="relative flex h-screen items-center justify-center overflow-hidden bg-background">
+    <main className="intro-scene relative flex items-center justify-center overflow-hidden bg-background">
       {frames.length > 0 && (
         <img
           src={frames[i]}
