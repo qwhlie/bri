@@ -21,6 +21,11 @@ describe("Carta de Belle para Bri", () => {
     expect(letterParagraphs[2]).toContain("conheceu a verdadeira Julie");
   });
 
+  it("drops the extra 'em' Julie asked to remove from the 'tem dias' line", () => {
+    expect(letterParagraphs[2]).toContain("Bri, tem dias que só você para me fazer rir");
+    expect(letterParagraphs.some((paragraph) => paragraph.includes("tem em dias"))).toBe(false);
+  });
+
   it("keeps the three closing paragraphs Julie sent for the second letter page", () => {
     expect(letterClosingParagraphs).toHaveLength(3);
   });
